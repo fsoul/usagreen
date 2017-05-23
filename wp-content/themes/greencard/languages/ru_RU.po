@@ -1,0 +1,357 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GreenCard\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-23 11:07+0000\n"
+"PO-Revision-Date: 2016-12-23 11:15+0000\n"
+"Last-Translator: admin <volodinks@gmail.com>\n"
+"Language-Team: Russian\n"
+"Language: ru-RU\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: woocommerce.php:26 single.php:28 page.php:31
+#: page-templates/page-sidebar-left.php:22
+#: page-templates/page-full-width.php:22 page-templates/front.php:38
+msgid "Pages:"
+msgstr ""
+
+#: index.php:41 archive.php:41 search.php:38
+msgid "&larr; Older posts"
+msgstr ""
+
+#: index.php:42 archive.php:42 search.php:39
+msgid "Newer posts &rarr;"
+msgstr ""
+
+#: single.php:25 page.php:28
+msgid "Edit"
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for"
+msgstr ""
+
+#: 404.php:16
+msgid "File Not Found"
+msgstr ""
+
+#: 404.php:20
+msgid ""
+"The page you are looking for might have been removed, had its name changed, "
+"or is temporarily unavailable."
+msgstr ""
+
+#: 404.php:22
+msgid "Please try the following:"
+msgstr ""
+
+#: 404.php:24
+msgid "Check your spelling"
+msgstr ""
+
+#: 404.php:25
+#, php-format
+msgid "Return to the <a href=\"%s\">home page</a>"
+msgstr ""
+
+#: 404.php:26
+msgid "Click the <a href=\"javascript:history.back()\">Back</a> button"
+msgstr ""
+
+#: comments.php:26
+msgid "Reply"
+msgstr ""
+
+#: comments.php:35
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php:54
+msgid "Please do not load this page directly. Thanks!"
+msgstr ""
+
+#: comments.php:59
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:72
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:72
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:75
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:79
+#, php-format
+msgid "Logged in as <a href=\"%1$s/wp-admin/profile.php\">%2$s</a>."
+msgstr ""
+
+#: comments.php:79
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:79
+msgid "Log out &raquo;"
+msgstr ""
+
+#: comments.php:84
+msgid "Name"
+msgstr ""
+
+#: comments.php:84 comments.php:92
+msgid " (required)"
+msgstr ""
+
+#: comments.php:92
+msgid "Email (will not be published)"
+msgstr ""
+
+#: comments.php:100
+msgid "Website"
+msgstr ""
+
+#: comments.php:109
+msgid "Comment"
+msgstr ""
+
+#: comments.php:116
+msgid "You can use these tags:"
+msgstr ""
+
+#: comments.php:122
+msgid "Submit Comment"
+msgstr ""
+
+#: searchform.php:13 searchform.php:16
+msgid "Search"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content.php:19
+msgid "Continue reading..."
+msgstr ""
+
+#. Name of the template
+msgid "GreenCard Front"
+msgstr ""
+
+#. Name of the template
+msgid "Kitchen Sink"
+msgstr ""
+
+#. Name of the template
+msgid "Left Sidebar"
+msgstr ""
+
+#. Name of the template
+msgid "Full Width"
+msgstr ""
+
+#. Name of the template
+msgid "Front"
+msgstr ""
+
+#: library/widget-areas.php:14
+msgid "Top right widgets"
+msgstr ""
+
+#: library/widget-areas.php:15
+msgid "Drag widgets to this Top Right container"
+msgstr ""
+
+#: library/widget-areas.php:24
+msgid "Sidebar widgets"
+msgstr ""
+
+#: library/widget-areas.php:25
+msgid "Drag widgets to this sidebar container."
+msgstr ""
+
+#: library/widget-areas.php:34
+msgid "Footer widgets"
+msgstr ""
+
+#: library/widget-areas.php:35
+msgid "Drag widgets to this footer container"
+msgstr ""
+
+#: library/custom-nav.php:16
+msgid "Mobile Menu Settings"
+msgstr ""
+
+#: library/custom-nav.php:17
+msgid "Controls the mobile menu"
+msgstr ""
+
+#: library/custom-nav.php:22
+msgid "Mobile navigation layout"
+msgstr ""
+
+#: library/custom-nav.php:31
+msgid "topbar"
+msgstr ""
+
+#: library/foundation.php:24
+msgid "&laquo;"
+msgstr ""
+
+#: library/foundation.php:25
+msgid "&raquo;"
+msgstr ""
+
+#: library/foundation.php:53
+#, php-format
+msgid ""
+"Please assign a menu to the primary menu location under %1$s or %2$s the "
+"design."
+msgstr ""
+
+#: library/foundation.php:54
+#, php-format
+msgid "<a href=\"%s\">Menus</a>"
+msgstr ""
+
+#: library/foundation.php:57
+#, php-format
+msgid "<a href=\"%s\">Customize</a>"
+msgstr ""
+
+#: library/foundation.php:107
+msgid "No Responses to"
+msgstr ""
+
+#: library/foundation.php:107
+msgid "One Response to"
+msgstr ""
+
+#: library/foundation.php:107
+msgid "% Responses to"
+msgstr ""
+
+#: library/foundation.php:147
+#, php-format
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr ""
+
+#: library/entry-meta.php:11
+#, php-format
+msgid "Posted on %1$s at %2$s."
+msgstr ""
+
+#: library/entry-meta.php:12
+msgid "Written by"
+msgstr ""
+
+#: library/navigation.php:43
+msgid "mobile-nav"
+msgstr ""
+
+#: library/navigation.php:210
+msgid "Page"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:60
+msgid "Email:"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:170
+msgid "Recent Orders"
+msgstr "Состояние платежей"
+
+#. Name of the theme
+msgid "GreenCard"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb"
+msgstr ""
+
+#. Author of the theme
+msgid "Аноним"
+msgstr ""
+
+#. Name of the template
+msgid "GreenCard Login"
+msgstr "GreenCard Логин"
+
+#. Name of the template
+msgid "GreenCard Registration"
+msgstr "GreenCard  Регистрация"
+
+#. Name of the template
+msgid "GreenCard Page"
+msgstr "GreenCard Страница"
+
+#: woocommerce/myaccount/dashboard.php:64
+msgid "First Name:"
+msgstr "Имя:"
+
+#: woocommerce/myaccount/dashboard.php:68
+msgid "Last Name:"
+msgstr "Фамилия:"
+
+#: woocommerce/myaccount/dashboard.php:72
+msgid "Marital Status"
+msgstr "Семейное положение"
+
+#: woocommerce/myaccount/dashboard.php:76
+msgid "Country of Birth"
+msgstr "Страна рождения"
+
+#: woocommerce/myaccount/dashboard.php:80
+msgid "Country of Residence"
+msgstr "Страна проживания"
+
+#: woocommerce/myaccount/dashboard.php:84
+msgid "I`m currently working:"
+msgstr "Я сейчас работаю"
+
+#: woocommerce/myaccount/dashboard.php:88
+msgid "I`m a High Shcool Graduate:"
+msgstr "У меня есть высшее образование"
+
+#: woocommerce/myaccount/dashboard.php:92
+msgid "Mobile phone:"
+msgstr "Мобильный телефон"
+
+#: woocommerce/myaccount/dashboard.php:96
+msgid "Phone: (Home / Office):"
+msgstr "Телефон: (Домашний / Оффис)"
+
+#: woocommerce/myaccount/dashboard.php:251
+msgid "You have choise subscrible to GREEN CARD LOTTERY"
+msgstr "Вы можете выбрать вид подписки GREEN CARD лотореи"

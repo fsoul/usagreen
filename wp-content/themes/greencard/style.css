@@ -1,0 +1,405 @@
+/*
+Theme Name:         GreenCard
+Github Theme URI:   https://github.com/olefredrik/FoundationPress
+Description:        FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb
+
+*/
+
+/* ----------------------------------------------------------------------------
+
+	Unfortunately WordPress will require a style.css file
+	located in the theme's root folder for stuff to work.
+
+	However, we will not be using vanilla CSS. We're using Sass.
+
+	Sass is a superset of CSS that adds in amazing features
+	such as variables, nested selectors and loops. It's also
+	the easiest way to customize Foundation.
+
+	All Sass files are located in the /assets/scss folder.
+	Please note that none of your scss files will be compiled to /stylesheets/foundation.css before you run
+	'npm run watch' or 'npm run build'.
+
+	Please read the README.md file before getting started. More info on how
+	to use Sass with Foundation can be found here:
+	http://foundation.zurb.com/docs/sass.html
+
+	If you for some reason would like to write plain css instead of using Sass,
+	you could just enqueue this file (style.css) to the header and add your styles in this file
+
+---------------------------------------------------------------------------- */
+@font-face {
+    font-family: 'Kelson Sans';
+    src: local('Kelson Sans Light RU'), local('KelsonSans-LightRU'), url('assets/fonts/kelsonsanslightru.woff2') format('woff2'), url('assets/fonts/kelsonsanslightru.woff') format('woff'), url('assets/fonts/kelsonsanslightru.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kelson Sans';
+    src: local('Kelson Sans Regular RU'), local('KelsonSans-RegularRU'), url('assets/fonts/kelsonsansregularru.woff2') format('woff2'), url('assets/fonts/kelsonsansregularru.woff') format('woff'), url('assets/fonts/kelsonsansregularru.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kelson Sans';
+    src: local('Kelson Sans Bold RU'), local('KelsonSans-BoldRU'), url('assets/fonts/kelsonsansboldru.woff2') format('woff2'), url('assets/fonts/kelsonsansboldru.woff') format('woff'), url('assets/fonts/kelsonsansboldru.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: -apple-system,'Kelson Sans',sans-serif;
+    font-weight: bold;
+}
+body {overflow-x: hidden;}
+.onebox, .onebox label {display: inline-block;}
+.onebox label {padding-left: 20px;}
+.onebox:first-child label {padding-left: 0;}
+[type=file], [type=checkbox], [type=radio] {margin: 0 ;}
+.radio-box {margin: 0 ;font-size: 1.125rem;line-height: 2;}
+.radio-box input{margin-left:1.5em;margin-right:0.5em}
+.radio-box input:first-child{margin-left:0}
+#error-message {color: red;font-size: 1.3em;text-align: center;}
+
+
+/* page title */
+.page-title {
+	margin: 2rem 0;
+  /*text-transform: uppercase;*/
+  font-family: -apple-system,'Kelson Sans',sans-serif;
+  font-weight: 400;
+}
+
+/* product stule */
+div.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+		border: 1px solid #bdbdbd;
+		padding: .25rem;
+		width: 30%;
+		margin: 1%;
+}
+
+@media only screen and (max-width : 543px) {
+	.hidden-xs{display:none;}
+}
+@media only screen and (max-width : 767px) {
+	.hidden-sm{display:none;}
+}
+@media only screen and (max-width : 768px) {
+	body.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+		width: 100%;
+		margin: 1% 0;
+	}
+
+}
+
+div.woocommerce ul.products li.product h3 {
+	background: url(assets/images/price-bg.jpg) center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	text-align: center;
+	padding: 1.25rem;
+	border: 1px solid #306CA4;
+	border-radius: 2px;  
+	font-family: -apple-system,'Kelson Sans',sans-serif;
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+div.woocommerce ul.products li.product .price {
+	color: #bf4428;
+	padding: 1rem;
+}
+
+div.woocommerce ul.products li.product .price ins {
+	font-size: 3.5rem;
+	line-height: 1;
+	font-family: -apple-system,PFDindisplayProMedium,sans-serif;
+	color: #bf4428;  
+	text-decoration: none;
+	opacity: 1;
+}
+
+div.woocommerce ul.products li.product .price del {
+	width: 40%;
+	display: inline-block;
+	margin: 0;
+	vertical-align: bottom;
+	text-align: center;
+	color: #3f3f3f;
+	font-weight: 700;
+	font-size: 1rem;
+	text-decoration: none;
+	text-decoration: line-through;
+	opacity: 1;
+}
+
+div.woocommerce ul.products li.product .button {
+	display: block;
+	text-transform: uppercase;
+	font-family: -apple-system,'Kelson Sans',sans-serif;
+	border-radius: 1rem;
+	border-bottom: 2px solid #733d3d;  
+	background-color: #cb1e1b;
+	color: #ffffff;
+	font-weight: bold;
+	margin: 20px auto 16px;
+	max-width: 180px;
+}
+
+div.woocommerce ul.products li.product p {
+	display: block;
+	width: 100%;
+	text-align: center;
+	border-top: 1px dashed #baab82;
+	border-bottom: 1px dashed #baab82;  
+	padding: 1rem;
+	margin: .25rem 0;
+	text-align: center;
+}
+
+.center,
+.center-icon-blocks .fw-gc-icon-block {text-align: center;}
+.warning-line a,
+.warning-line {color: #cb1e1b;font-size: 1.125rem;}
+.warning-line a{font-weight: bold;}
+body.woocommerce-checkout .woocommerce-message {display: none;}
+.fw-col-xs-6 {width: 50%;float:left;}
+.table .fw-col-xs-6.fw-col-sm-4 {padding: .5rem .2rem;border-bottom: 2px dotted lightgrey;}
+.page .fw-step-heading h4 {display: block;}
+
+/* Info block */
+.gc-info-block {
+	/* padding: 30px; */
+	max-width: 440px;
+	margin: 0 auto;
+	background: url(assets/images/flag.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+div.gc-info-block h2 {
+	font-size: 2.2rem;
+	border: 2px solid #cad5db;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+.gc-info-block button,
+.gc-info-block a {
+	display: block;
+  font-family: -apple-system,'Kelson Sans',sans-serif;
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 3px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, .8);	
+	background: #de4628; /* Old browsers */
+	background: -moz-linear-gradient(top,  #de4628 0%, #bc381e 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #de4628 0%,#bc381e 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #de4628 0%,#bc381e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.gc-info-block a:hover, .gc-info-block a:active {color: #fff;}
+
+.gc-info-block p {margin: 0;}
+
+
+#front-hero .click-here-for-register {
+	background-size: cover;
+  font-family: -apple-system,'Kelson Sans',sans-serif;
+  color: #fff;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 3px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, .8);	
+  min-width: 240px;
+	border-radius: 2rem;
+	border-bottom: 2px solid #733d3d;
+	height: auto !important;
+}
+
+@media only screen and (max-width : 768px) {
+	#front-hero .click-here-for-register {
+		font-size: 1.2rem;
+		width: 260px !important;
+	}
+	.top-line .social_block {margin-left: -40px;float: left;}
+	.top-line .social_block img{ width: 40px; }
+	.top-right-wraper {float: right;}
+	.top-right-wraper {margin: 1rem -1rem;}
+}
+@media only screen and (max-width: 736px){
+ .top-line .social_block {margin-left: 0; }
+ table tbody td, table tbody th ,
+ table tfoot td, table tfoot th, table thead td, table thead th {
+    padding: 0.5rem!important;
+    font-size: 1rem!important;
+ }
+}
+@media only screen and (max-width: 440px){
+ .top-line .easylogo {float: left;margin-left: -10px;}
+ .top-line .social_block{float: right;}
+}
+@media only screen and (max-width: 360px){
+ .top-line> .row {padding: 10px 0;}
+ .top-line .easylogo {}
+ .top-line .social_block{width: 40px;}
+}
+@media only screen and (max-width: 320px){
+ .table .fw-col-xs-6.fw-col-sm-4 {min-height: 66px;}
+ .top-line .top-right-wraper {margin: 1rem 0rem;}/*-1*/
+ .top-line .top-right-wraper a{font-size: small;}
+ form .row,
+ form .columns,
+ .woocommerce form.register{padding: 0 5px;}
+}
+/* this section for only LP   -> .page-id-539 */
+.page-id-539 .top-line .polylang-dropdown,
+.page-id-539 .top-line .otw-button,
+.page-id-539 #masthead {display: none!important;visibility: hidden;}
+.page-id-539 .gc-info-block button{
+    background: #3e9dd7;
+    background: -moz-linear-gradient(top, #3e9dd7 0%, #3279a5 100%);
+    background: -webkit-linear-gradient(top, #3e9dd7 0%,#3279a5 100%);
+    background: linear-gradient(to bottom, #3e9dd7 0%,#3279a5 100%);
+    width: 100%;
+    border-radius: 20px;
+    margin-top: -10px;
+}
+
+.page-id-539 .lp #front-hero .click-here-for-register,
+.page-id-539 .lp .large-5.columns {display: none;}
+.page-id-539 #front-hero{height:initial;background: url(/wp-content/themes/greencard/assets/images/lp-hero-line-bg.jpg) center no-repeat;}
+.page-id-539 #front-hero .front-hero-header{background:initial;}
+.page-id-539 #front-hero .front-hero-header h1{color: #0c436e;}
+.page-id-539 .lp .large-7.columns {width: 100%;}
+.page-id-539 .gc-lp-baner {text-align: center;margin-top: 4rem;}
+.page-id-539 .lp .title-style-2{margin-top: 4rem;}
+.page-id-539 .gc-lp-baner button,
+.page-id-539 .gc-lp-baner a {
+    font-family: -apple-system,'Kelson Sans',sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, .8);
+    background: #de4628;
+    background: -moz-linear-gradient(top, #de4628 0%, #bc381e 100%);
+    background: -webkit-linear-gradient(top, #de4628 0%,#bc381e 100%);
+    background: linear-gradient(to bottom, #de4628 0%,#bc381e 100%);
+    font-weight: 500;
+}
+.page-id-539 .gc-lp-baner button{color: #fff;font-size: 1.4rem;margin: 0 auto;padding: 10px 20px;border-radius: 20px;}
+.page-id-539 .gc-lp-baner a {font-size: 2.8rem;line-height: 1;padding: 1.3rem .5rem 1.1rem;border-radius: 5px;}
+.page-id-539 .gc-info-block{padding:initial;background:initial;}
+.page-id-539 .gc-info-block h2{margin-bottom:20px;}
+.page-id-539 .top-right-wraper {margin-top: 20px;}
+
+/*.top-line .easylogo {float: left;}*/
+.top-line .social_block {margin-top: 20px;text-align: left;float: left;}
+.register #phone {width: 60%;}
+.phone-flag {
+    float: left;
+    width: 50px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 10px;
+}
+
+.phone-country {
+    height: 38px;
+    line-height: 38px;
+}
+
+.grabber table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: -apple-system,KelsonSansRegular,sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #3f3f3f;
+  font-size: 12px;
+}
+
+.grabber tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.grabber td {
+  padding: 10px;
+  border: 1px dashed #D9D3BD;
+}
+
+.grabber td:first-child {
+  text-align: center
+}
+
+.grabber .delete-row {
+    width: 25px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    margin-top: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.grabber .delete-row:hover {
+    transform: scale(1.1) rotate(90deg);
+}
+
+.grabber img {max-width: 100%;}
+.register .columns:last-child:not(:first-child){float: left;}
+.woocommerce  .register .woocommerce-Button {background-color: #17629b;color: white;}
+#wpcf7-f546-o1 form.wpcf7-form {
+  padding: 10px 20px !important;
+}
+
+#wpcf7-f546-o1 form.wpcf7-form label {
+  font-family: -apple-system, KelsonSansRegular, sans-serif !important;
+  color: #0c2133 !important;
+}
+
+#wpcf7-f546-o1 form.wpcf7-form textarea {
+  height: 108px;
+  resize: none;
+}
+
+#wpcf7-f546-o1 form.wpcf7-form .wpcf7-submit{
+    float: right;
+    padding: 5px 40px;
+    border-radius: 3px;
+    border: none;
+    background-color: #da332c;
+    box-shadow: 0 2px 0px 0px #852a27;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: -apple-system, KelsonSansRegular, sans-serif !important;
+}
+/*changes*/
+.fw-col-xs-12{
+    padding-left: 0px !important;
+    padding-right: 0px !important;  
+}
+.entry-content .fw-row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+.fw-col-xs-12.fw-col-sm-6{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+/*end changes*/
+
+@media screen and (max-width: 640px) {
+  .fw-heading.fw-big-heading {
+    margin-top: 100px;
+  }
+
+  .fw-heading.fw-big-heading .statue-of-liberty {
+  	left: 10px !important;
+  }
+}

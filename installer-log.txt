@@ -1,0 +1,208 @@
+********************************************************************************
+DUPLICATOR-LITE INSTALL-LOG
+STEP1 START @ 07:08:55
+NOTICE: Do NOT post to public sites or forums
+********************************************************************************
+VERSION:	1.1.26
+PHP:		5.6.28 | SAPI: litespeed
+SERVER:		Apache
+DOC ROOT:	/home/kresloka/usagreenc.com/www
+DOC ROOT 755:	true
+LOG FILE 644:	true
+BUILD NAME:	20161228_greencard_5863f06836bcf5361161228170336
+REQUEST URL:	http://usagreenc.com/gr_installer.php
+
+********************************************************************************
+ARCHIVE SETUP
+********************************************************************************
+NAME:	20161228_greencard_5863f06836bcf5361161228170336_archive.zip
+SIZE:	37.05MB
+ZIP:	Enabled (ZipArchive Support)
+EXTRACTING
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 8729
+    [filename] => /home/kresloka/usagreenc.com/www/20161228_greencard_5863f06836bcf5361161228170336_archive.zip
+    [comment] => 
+)
+COMPLETE: true
+
+WEB SERVER CONFIGURATION FILE RESET:
+- Backup of .htaccess/web.config made to *.161228190907.orig
+- Reset of .htaccess/web.config files
+
+UPDATED FILES:
+- SQL FILE:  '/home/kresloka/usagreenc.com/www/installer-data.sql'
+- WP-CONFIG: '/home/kresloka/usagreenc.com/www/wp-config.php' (if present)
+
+ARCHIVE RUNTIME: 12.3565 sec.
+
+
+********************************************************************************
+DATABASE-ROUTINES
+********************************************************************************
+--------------------------------------
+SERVER ENVIROMENT
+--------------------------------------
+MYSQL VERSION:	This Server: 5.6.27 -- Build Server: 5.6.27
+TIMEOUT:	5000
+MAXPACK:	16777216
+SQLMODE:	NO_DIR_IN_CREATE
+
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 8729
+    [filename] => /home/kresloka/usagreenc.com/www/20161228_greencard_5863f06836bcf5361161228170336_archive.zip
+    [comment] => 
+)
+COMPLETE: true
+
+--------------------------------------
+DATABASE RESULTS
+--------------------------------------
+ERRORS FOUND:	0
+DROP TABLE:	
+QUERIES RAN:	4228
+
+grabber: (4)
+wpgc_ak_params: (1)
+wpgc_ak_profiles: (1)
+wpgc_ak_stats: (1)
+wpgc_ak_storage: (2)
+wpgc_ak_users: (0)
+wpgc_akeeba_common: (3)
+wpgc_commentmeta: (0)
+wpgc_comments: (6)
+wpgc_duplicator_packages: (1)
+wpgc_em_modal_metas: (1)
+wpgc_em_modals: (1)
+wpgc_em_theme_metas: (1)
+wpgc_em_themes: (1)
+wpgc_links: (0)
+wpgc_options: (622)
+wpgc_postmeta: (1566)
+wpgc_posts: (536)
+wpgc_term_relationships: (138)
+wpgc_term_taxonomy: (32)
+wpgc_termmeta: (0)
+wpgc_terms: (32)
+wpgc_ura_fields: (521)
+wpgc_ura_xwrd_change: (0)
+wpgc_usermeta: (624)
+wpgc_users: (20)
+wpgc_woocommerce_api_keys: (0)
+wpgc_woocommerce_attribute_taxonomies: (0)
+wpgc_woocommerce_downloadable_product_permissions: (0)
+wpgc_woocommerce_order_itemmeta: (45)
+wpgc_woocommerce_order_items: (5)
+wpgc_woocommerce_payment_tokenmeta: (0)
+wpgc_woocommerce_payment_tokens: (0)
+wpgc_woocommerce_sessions: (23)
+wpgc_woocommerce_shipping_zone_locations: (0)
+wpgc_woocommerce_shipping_zone_methods: (0)
+wpgc_woocommerce_shipping_zones: (0)
+wpgc_woocommerce_tax_rate_locations: (0)
+wpgc_woocommerce_tax_rates: (0)
+Removed '290' cache/transient rows
+
+SECTION RUNTIME: 3.8743 sec.
+
+********************************************************************************
+STEP1 COMPLETE @ 07:09:11 - TOTAL RUNTIME: 16.2394 sec.
+********************************************************************************
+
+
+
+********************************************************************************
+DUPLICATOR-LITE INSTALL-LOG
+STEP2 START @ 07:09:22
+NOTICE: Do not post to public sites or forums
+********************************************************************************
+CHARSET SERVER:	cp1251
+CHARSET CLIENT:	 utf8 
+
+--------------------------------------
+SERIALIZER ENGINE
+[*] scan every column
+[~] scan only text columns
+[^] no searchable columns
+--------------------------------------
+grabber~ (4)
+wpgc_ak_params~ (1)
+wpgc_ak_profiles~ (1)
+wpgc_ak_stats~ (1)
+wpgc_ak_storage~ (2)
+wpgc_ak_users^ (0)
+wpgc_akeeba_common~ (3)
+wpgc_commentmeta^ (0)
+wpgc_comments~ (6)
+wpgc_duplicator_packages^ (0)
+wpgc_em_modal_metas~ (1)
+wpgc_em_modals~ (1)
+wpgc_em_theme_metas~ (1)
+wpgc_em_themes~ (1)
+wpgc_links^ (0)
+wpgc_options~ (330)
+wpgc_postmeta~ (1566)
+wpgc_posts~ (536)
+wpgc_term_relationships~ (138)
+wpgc_term_taxonomy~ (32)
+wpgc_termmeta^ (0)
+wpgc_terms~ (32)
+wpgc_ura_fields~ (521)
+wpgc_ura_xwrd_change^ (0)
+wpgc_usermeta~ (624)
+wpgc_users~ (20)
+wpgc_woocommerce_api_keys^ (0)
+wpgc_woocommerce_attribute_taxonomies^ (0)
+wpgc_woocommerce_downloadable_product_permissions^ (0)
+wpgc_woocommerce_order_itemmeta~ (45)
+wpgc_woocommerce_order_items~ (5)
+wpgc_woocommerce_payment_tokenmeta^ (0)
+wpgc_woocommerce_payment_tokens^ (0)
+wpgc_woocommerce_sessions~ (23)
+wpgc_woocommerce_shipping_zone_locations^ (0)
+wpgc_woocommerce_shipping_zone_methods^ (0)
+wpgc_woocommerce_shipping_zones^ (0)
+wpgc_woocommerce_tax_rate_locations^ (0)
+wpgc_woocommerce_tax_rates^ (0)
+--------------------------------------
+Search1:	'http://il1.grytsenko.in.ua' 
+Change1:	'http://usagreenc.com' 
+Search2:	'/home/kresloka/grytsenko.in.ua/il1' 
+Change2:	'/home/kresloka/usagreenc.com/www' 
+Search3:	'http:\/\/il1.grytsenko.in.ua' 
+Change3:	'http:\/\/usagreenc.com' 
+Search4:	'\/home\/kresloka\/grytsenko.in.ua\/il1' 
+Change4:	'\/home\/kresloka\/usagreenc.com\/www' 
+Search5:	'%2Fhome%2Fkresloka%2Fgrytsenko.in.ua%2Fil1%2F' 
+Change5:	'%2Fhome%2Fkresloka%2Fusagreenc.com%2Fwww%2F' 
+Search6:	'http%3A%2F%2Fil1.grytsenko.in.ua' 
+Change6:	'http%3A%2F%2Fusagreenc.com' 
+Search7:	'\home\kresloka\grytsenko.in.ua\il1' 
+Change7:	'/home/kresloka/usagreenc.com/www' 
+SCANNED:	Tables:39 	|	 Rows:3894 	|	 Cells:35332 
+UPDATED:	Tables:1 	|	 Rows:587 	|	 Cells:673 
+ERRORS:		0 
+RUNTIME:	0.697000 sec
+
+********************************************************************************
+START FINAL CLEANUP: 07:09:23
+********************************************************************************
+UPDATE `wpgc_blogs` SET domain = 'usagreenc.com' WHERE domain = 'il1.grytsenko.in.ua'
+
+--------------------------------------
+NOTICES
+--------------------------------------
+No Notices Found
+
+
+WEB SERVER CONFIGURATION FILE BASIC SETUP:
+created basic .htaccess file.  If using IIS web.config this process will need to be done manually.
+********************************************************************************
+STEP 2 COMPLETE @ 07:09:23 - TOTAL RUNTIME: 0.7082 sec.
+********************************************************************************
