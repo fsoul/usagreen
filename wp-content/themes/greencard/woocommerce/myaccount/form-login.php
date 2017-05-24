@@ -91,9 +91,9 @@ $all_lang = array(
 				<input type="submit" class="woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" />
 			</div>
 
-            <?php do_action( 'lead_hook' ); ?>
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
-			</div>
+            <?php do_action( 'lead_hook' ); ?>
+            </div>
 
 		</form>
 	</div>

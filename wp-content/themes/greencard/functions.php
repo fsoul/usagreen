@@ -108,11 +108,11 @@ function send_lead(){
 
         $to = get_option('show_email');
         $subj = 'New Client Lead';
-        $mess = "Name: {$name}\n";
-        $mess .= "Email: {$email}\n";
-        $mess .= "Phone: {$phone}\n";
+        $mess = "Name: {$name}\r\n";
+        $mess .= "Email: {$email}\r\n";
+        $mess .= "Phone: {$phone}";
 
-        wp_mail($to, $subj, $mess);
+        $wp = wp_mail($to, $subj, $mess);
     }
 }
 add_action('lead_hook', 'send_lead');
