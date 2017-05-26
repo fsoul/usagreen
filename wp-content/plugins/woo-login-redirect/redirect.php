@@ -76,9 +76,9 @@ function wcs_login_redirect( $redirect ) {
 
 add_filter('woocommerce_registration_redirect', 'wcs_register_redirect');
 function wcs_register_redirect( $redirect ) {
-     $redirect = get_permalink( get_option( 'reg_redirect_page_id') );
-     return $redirect;
+    $lang = substr(get_bloginfo('language'), 0, -3);
+    $redirect = get_permalink( get_option( 'reg_redirect_page_id') );
+    $arr = explode('/', $redirect);
+    $redirect = $arr[0] . "//" . $arr[2] . "/" . $lang . "/" . $arr[3];
+    return $redirect;
 }
-
-
-?>

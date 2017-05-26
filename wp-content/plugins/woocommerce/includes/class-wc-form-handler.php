@@ -1025,7 +1025,6 @@ class WC_Form_Handler {
 				if ( apply_filters( 'woocommerce_registration_auth_new_customer', true, $new_customer ) ) {
 					wc_set_customer_auth_cookie( $new_customer );
 				}
-
 				wp_safe_redirect( apply_filters( 'woocommerce_registration_redirect', wp_get_referer() ? wp_get_referer() : wc_get_page_permalink( 'myaccount' ) ) );
 				exit;
 
