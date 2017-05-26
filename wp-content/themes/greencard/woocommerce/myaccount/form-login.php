@@ -87,12 +87,12 @@ $all_lang = array(
 
 			<div class="row">
 			<div class=" medium-12 columns">
+                <input type="hidden" name="lead_email" value="<? echo get_option('show_email')?>">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-				<input type="submit" class="woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" />
+				<input type="submit" class="abc woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" />
 			</div>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
-            <?php do_action( 'lead_hook' ); ?>
             </div>
 
 		</form>

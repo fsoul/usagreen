@@ -60,24 +60,24 @@ $('#phone').inputmask("phone", {
 
 /*Плагин отслеживания пользователей*/
 var trackChanges = false;
+/* #~#
 $('#post-389 .woocommerce, #post-582 .woocommerce').mouseleave(function(){
     if(trackChanges == false){
-        sendData();
+        sendData('leave');
     }
     trackChanges = true;
-});
+});*/
 $('#post-389 .woocommerce input[type="submit"], #post-582 .woocommerce input[type="submit"]').click(function(){
     if(trackChanges == false){
-        sendData();
+        sendData('submit');
     }
     trackChanges = true;
 });
 $('#post-389 .woocommerce input, #post-389 .woocommerce select, #post-582 .woocommerce input, #post-582 .woocommerce select').change(function(){
     trackChanges = false;
 });
-function sendData(){
+function sendData(action){
     var formData = $('form.register').serializeArray();
-    //console.log(formData);
     var filteredData = [];
     $.each(formData, function(i,el){
         if(el.value){
@@ -89,7 +89,7 @@ function sendData(){
     if(filteredData.length > 0){
         var postq = {
             name:'spy',
-            value:'myplug'
+            value: action
         };
         filteredData.push(postq);
         //console.log(filteredData);

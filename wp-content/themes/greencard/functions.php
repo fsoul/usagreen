@@ -97,31 +97,12 @@ function woo_custom_cart_button_text() {
  * Custom lead options
  * ------------------------------------------------------------------------ */
 
-/**
- * Sending lead data
- */
-function send_lead(){
-    if(!empty($_REQUEST['mobile'])){
-        $phone = $_REQUEST['mobile'];
-        $name = $_REQUEST['first_name'];
-        $email = $_REQUEST['email'];
-
-        $to = get_option('show_email');
-        $subj = 'New Client Lead';
-        $mess = "Name: {$name}\r\n";
-        $mess .= "Email: {$email}\r\n";
-        $mess .= "Phone: {$phone}";
-
-        $wp = wp_mail($to, $subj, $mess);
-    }
-}
-add_action('lead_hook', 'send_lead');
 
 add_action('admin_init', 'lead_initialize_options');
 function lead_initialize_options() {
     add_settings_section(
         'general_settings_section',
-        'Lead Email Options',
+        'Настройка лид генерации',
         'lead_callback',
         'general'
     );
@@ -144,11 +125,11 @@ function lead_initialize_options() {
 }
 
 function lead_callback() {
-    echo '<p>Provide lead emails</p>';
+    echo '<p>Адреса можно вводить через запятую</p>';
 }
 
 function email_callback($args) {
-    $html = '<input title="'.$args[0].'" type="text" name="show_email" id="show_email" value="'.get_option('show_email').'"/>';
-    $html .= '<p class="description" id="lead-email-description">Email адреса для лид рассылки. Вводить через запятую</p>';
+    $html = '<input class="regular-text" title="'.$args[0].'" type="text" name="show_email" id="show_email" value="'.get_option('show_email').'"/>';
+    $html .= '<p class="description" id="lead-email-description">Email адреса для лид рассылки</p>';
     echo $html;
 }
