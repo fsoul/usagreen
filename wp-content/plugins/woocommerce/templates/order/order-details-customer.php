@@ -60,7 +60,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <address>
 	<?php echo ( $address = $order->get_formatted_billing_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?>
 </address>
-
+        <br>
+<header class="title">
+    <h3><?php _e( 'Address of the company', 'woocommerce' ); ?></h3>
+</header>
+<address>
+    <p>3332 NE 190 ST</p>
+    <p>Aventura, FL 33180</p>
+</address>
 <?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() ) : ?>
 
 	</div><!-- /.col-1 -->
