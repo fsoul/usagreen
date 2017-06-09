@@ -54,5 +54,12 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
     ?>
     </tfoot>
 </table>
+<header class="title">
+    <h2><?php _e( 'Address of the company', 'woocommerce' ); ?></h2>
+</header>
+<address>
+    <p>3332 NE 190 ST</p>
+    <p>Aventura, FL 33180</p>
+</address>
 
 <?php do_action( 'woocommerce_email_after_order_table', $order, $sent_to_admin, $plain_text, $email ); ?>

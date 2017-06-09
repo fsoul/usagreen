@@ -17247,7 +17247,7 @@ msgstr ""
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:133
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:305
-msgid "IBAN"
+msgid "ABA"
 msgstr ""
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:134
@@ -17267,7 +17267,7 @@ msgid "Our Bank Details"
 msgstr ""
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:309
-msgid "BIC"
+msgid "Swift"
 msgstr ""
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:337

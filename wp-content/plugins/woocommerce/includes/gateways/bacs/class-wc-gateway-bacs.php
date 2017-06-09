@@ -130,8 +130,8 @@ class WC_Gateway_BACS extends WC_Payment_Gateway {
 							<th><?php _e( 'Account Number', 'woocommerce' ); ?></th>
 							<th><?php _e( 'Bank Name', 'woocommerce' ); ?></th>
 							<th><?php echo $sortcode; ?></th>
-							<th><?php _e( 'IBAN', 'woocommerce' ); ?></th>
-							<th><?php _e( 'BIC / Swift', 'woocommerce' ); ?></th>
+							<th><?php _e( 'ABA', 'woocommerce' ); ?></th>
+							<th><?php _e( 'Swift', 'woocommerce' ); ?></th>
 						</tr>
 					</thead>
 					<tbody class="accounts">
@@ -301,12 +301,12 @@ class WC_Gateway_BACS extends WC_Payment_Gateway {
 						'label' => $sortcode,
 						'value' => $bacs_account->sort_code
 					),
-					'iban'          => array(
-						'label' => __( 'IBAN', 'woocommerce' ),
+					'aba'          => array(
+						'label' => __( 'ABA', 'woocommerce' ),
 						'value' => $bacs_account->iban
 					),
-					'bic'           => array(
-						'label' => __( 'BIC', 'woocommerce' ),
+					'swift'           => array(
+						'label' => __( 'Swift', 'woocommerce' ),
 						'value' => $bacs_account->bic
 					)
 				), $order_id );

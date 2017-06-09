@@ -6428,13 +6428,13 @@ msgid "+ Add Account"
 msgstr "+ Добавить аккаунт"
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:134
-msgid "BIC / Swift"
-msgstr "БИК"
+msgid "Swift"
+msgstr "Swift"
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:133
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:305
-msgid "IBAN"
-msgstr "IBAN"
+msgid "ABA"
+msgstr "ABA"
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:131
 msgid "Bank Name"

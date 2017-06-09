@@ -20,6 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
+<header class="title">
+    <h2><?php _e( 'Address of the company', 'woocommerce' ); ?></h2>
+</header>
+<address>
+    <p>3332 NE 190 ST</p>
+    <p>Aventura, FL 33180</p>
+</address>
+<br>
 <header><h2><?php _e( 'Customer Details', 'woocommerce' ); ?></h2></header>
 
 <table class="shop_table customer_details">
@@ -61,13 +69,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php echo ( $address = $order->get_formatted_billing_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?>
 </address>
         <br>
-<header class="title">
-    <h3><?php _e( 'Address of the company', 'woocommerce' ); ?></h3>
-</header>
-<address>
-    <p>3332 NE 190 ST</p>
-    <p>Aventura, FL 33180</p>
-</address>
 <?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() ) : ?>
 
 	</div><!-- /.col-1 -->
@@ -80,5 +81,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</address>
 	</div><!-- /.col-2 -->
 </div><!-- /.col2-set -->
-
 <?php endif; ?>
