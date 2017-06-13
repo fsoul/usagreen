@@ -130,7 +130,7 @@ class WC_Gateway_BACS extends WC_Payment_Gateway {
 							<th><?php _e( 'Account Number', 'woocommerce' ); ?></th>
 							<th><?php _e( 'Bank Name', 'woocommerce' ); ?></th>
 							<th><?php echo $sortcode; ?></th>
-							<th><?php _e( 'ABA', 'woocommerce' ); ?></th>
+							<th><?php _e( 'ABA', 'woocommerce' ); // admin label?></th>
 							<th><?php _e( 'Swift', 'woocommerce' ); ?></th>
 						</tr>
 					</thead>

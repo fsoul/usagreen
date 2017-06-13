@@ -103,11 +103,11 @@ class GatewayBACS extends \WC_Gateway_BACS
                                         'label' => $sortcode,
                                         'value' => $bacs_account->sort_code,
                                 ),
-                                'aba' => array(
+                                'iban' => array(
                                         'label' => __('ABA', 'woocommerce'),
                                         'value' => $bacs_account->iban,
                                 ),
-                                'swift' => array(
+                                'bic' => array(
                                         'label' => __('Swift', 'woocommerce'),
                                         'value' => $bacs_account->bic,
                                 ),

@@ -240,11 +240,11 @@ class URA_REGISTRATION_FORM_VIEW
 		<?php
 		if( $fieldKey == 'first_name' ){
 			?>
-			<?php _e( 'First Name', 'user-registration-aide' ); ?><?php echo $label; ?>
+			<?php _e( 'First Name', 'user-registration-aide' ); ?><?php echo $label; ?> *
 			<?php
 		}elseif( $fieldKey == 'last_name' ){
 			?>
-			<?php _e( 'Last Name', 'user-registration-aide' ); ?><?php echo $label; ?>
+			<?php _e( 'Last Name', 'user-registration-aide' ); ?><?php echo $label; ?> *
 			<?php
 		}elseif( $fieldKey == 'nickname' ){
 			?>

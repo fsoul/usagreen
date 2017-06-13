@@ -25,7 +25,7 @@ get_header(); ?>
 
 	<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 
-	<div class="large-5 medium-6 columns" id="customer_login">
+	<div class="abc large-5 medium-6 columns" id="customer_login">
 
 		<h2><?php _e( 'Login', 'woocommerce' ); ?></h2>
 
@@ -52,7 +52,7 @@ get_header(); ?>
 				</label>
 			</p>
 			<p class="woocommerce-LostPassword lost_password">
-				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
+                <a href="/wp-login.php?action=lostpassword"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
 			</p>
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
