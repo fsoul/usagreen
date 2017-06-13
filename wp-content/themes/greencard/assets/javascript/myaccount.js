@@ -1,7 +1,9 @@
 $(document).ready(function() {
 /* 	Разрешение на регистрацию при соблюдении условий
 	$('.register #agree_register').click(function(event){
-*/	
+*/
+
+
 	$('input[type="radio"].working,input[type="radio"].h_school,#birth_country').click(function(event){
 		var f_line = $("input[type='radio'].working:checked").val();
 		var s_line = $("input[type='radio'].h_school:checked").val();
@@ -26,13 +28,17 @@ $(document).ready(function() {
 */
 		}
 		
-	})
+	});
 	$("<div id='error-message' class='hidden'>We're sorry, but it seems that you are not able to participate in this year's Green Card lottery</div>").insertBefore("form.register input.woocommerce-Button");
   $('<div class="phone-flag"></div><div class="phone-country"></div>').insertAfter('#phone');
   $("#first_name").prop('required', true);
   $("#last_name").prop('required', true);
   $("#birth_country").prop('required', true);
   $("#country_resid").prop('required', true);
+  $("#phone").prop('required', true);
+  $("#mobile").prop('required', true);
+
+
 
 /* https://jsfiddle.net/ichepurnoy/5zy10bsL/ */
 /*
@@ -71,14 +77,46 @@ $('#post-389 .woocommerce, #post-582 .woocommerce').mouseleave(function(){
 });*/
 $('#post-389 .woocommerce input[type="submit"], #post-582 .woocommerce input[type="submit"]').click(function(){
     if(trackChanges == false){
-        sendData('submit');
+        if(validateFormData()){
+            sendData('submit');
+        }
     }
     trackChanges = true;
 });
 $('#post-389 .woocommerce input, #post-389 .woocommerce select, #post-582 .woocommerce input, #post-582 .woocommerce select').change(function(){
     trackChanges = false;
 });
+// /main_registration
+function validateFormData(){
+    var res = false;
+    var errors  = [];
+    var $reqFields = $('input[required], select[required]');
+
+
+    console.log($reqFields);
+    console.log('req count -> ' + $reqFields.length);
+
+
+    console.log('validation start');
+    console.log('color');
+    $.each($reqFields, function (indx, el) {
+        if(!el.value){
+            errors.push(el);
+            $(el).addClass('validation');
+        }
+    });
+
+
+    if(errors.length == 0) res = true;
+    console.log('return -> '+ res);
+    return res;
+}
+$('input[required], select[required]').change(function(e){
+    $(e.target).removeClass('validation');
+});
 function sendData(action){
+    console.log('sendData');
+
     var formData = $('form.register').serializeArray();
     var filteredData = [], requiredFields = [];
     $.each(formData, function(i,el){
@@ -86,17 +124,16 @@ function sendData(action){
             if((el.name!='userRegAide_RegFormNonce')&&(el.name!='_wp_http_referer')&&(el.name!='woocommerce-register-nonce')){
                 filteredData.push(el);
             }
-            if($(el).prop('required', true) && (el.value > 0) && (el.name!='woocommerce-register-nonce')){
-                requiredFields.push(el);
-                console.log('->'+el.name);
-
-            }
         } 
     });
-    if(filteredData.length > 0 && requiredFields.length > 3){
+    if(filteredData.length > 0){
+        console.log('sendAjax');
         console.log(filteredData);
-        console.log(requiredFields.length);
-
+        var postq = {
+            name:'spy',
+            value:'myplug'
+        };
+        filteredData.push(postq);
         //console.log(filteredData);
         var ajaxurl = homeurl+'/wp-content/themes/greencard/spyplugin/spy.php';
         $.post(ajaxurl,filteredData);

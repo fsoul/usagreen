@@ -14,7 +14,7 @@
 function ura_template_loader( $template ){
 	
 	$theme = wp_get_theme();
-	$style = $theme->get( 'ThemeURI' ).'stylesheet.css'; // #~# console error
+	$style = $theme->get( 'ThemeURI' ).'/stylesheet.css'; // #~# console error
 	if( empty( $style ) ){
 		$style = $theme->get( 'ThemeURI' ).'style.css';
 	}

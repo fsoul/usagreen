@@ -38,7 +38,7 @@ $all_lang = array(
 	<div class="row">
 		<h2><?php _e( 'Register', 'woocommerce' ); ?></h2>
 
-		<form method="post" class="register">
+		<form method="post" class="register" id="main_registration">
 			<div class="row">
 			<div class="medium-12 columns">
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
@@ -87,7 +87,7 @@ $all_lang = array(
 
 			<div class="row">
 			<div class=" medium-12 columns">
-                <input required="false" type="hidden" name="lead_email" value="<? echo get_option('show_email')?>">
+                <input type="hidden" name="lead_email" value="<? echo get_option('show_email')?>">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
 				<input type="submit" class="abc woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" />
 			</div>
