@@ -1,8 +1,10 @@
 $(document).ready(function() {
-/* 	Разрешение на регистрацию при соблюдении условий
+    $('#phone,#mobile').attr('type', 'tel');
+
+
+    /* 	Разрешение на регистрацию при соблюдении условий
 	$('.register #agree_register').click(function(event){
 */
-
 
 	$('input[type="radio"].working,input[type="radio"].h_school,#birth_country').click(function(event){
 		var f_line = $("input[type='radio'].working:checked").val();
@@ -87,7 +89,8 @@ $('#post-389 .woocommerce input, #post-389 .woocommerce select, #post-582 .wooco
     trackChanges = false;
 });
 // /main_registration
-function validateFormData(){
+
+    function validateFormData(){
     var res = false;
     var errors  = [];
     var $reqFields = $('input[required], select[required]');

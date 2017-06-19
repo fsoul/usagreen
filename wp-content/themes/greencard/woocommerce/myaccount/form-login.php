@@ -20,6 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+//wp_enqueue_script( 'isMobile', get_template_directory_uri() . '/assets/javascript/isMobile.min.js', array('jquery'), '1', true );
 wp_enqueue_script( 'myaccount', get_template_directory_uri() . '/assets/javascript/myaccount.js', array('jquery'), '1', true );
 
 $lang = get_bloginfo('language');
