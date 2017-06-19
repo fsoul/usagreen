@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    console.log('tel');
+    //$('.abc .woocommerce-Button .button').unbind();
     $('#phone,#mobile').attr('type', 'tel');
 
 
@@ -77,10 +79,12 @@ $('#post-389 .woocommerce, #post-582 .woocommerce').mouseleave(function(){
     }
     trackChanges = true;
 });*/
-$('#post-389 .woocommerce input[type="submit"], #post-582 .woocommerce input[type="submit"]').click(function(){
+$('#post-389 .woocommerce input[type="submit"], #post-582 .woocommerce input[type="submit"]').click(function(e){
+    e.preventDefault();
     if(trackChanges == false){
         if(validateFormData()){
             sendData('submit');
+          //  $('#main_registration').submit();
         }
     }
     trackChanges = true;
@@ -90,7 +94,7 @@ $('#post-389 .woocommerce input, #post-389 .woocommerce select, #post-582 .wooco
 });
 // /main_registration
 
-    function validateFormData(){
+function validateFormData(){
     var res = false;
     var errors  = [];
     var $reqFields = $('input[required], select[required]');

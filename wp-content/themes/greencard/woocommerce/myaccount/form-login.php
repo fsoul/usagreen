@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 //wp_enqueue_script( 'isMobile', get_template_directory_uri() . '/assets/javascript/isMobile.min.js', array('jquery'), '1', true );
-wp_enqueue_script( 'myaccount', get_template_directory_uri() . '/assets/javascript/myaccount.js', array('jquery'), '1', true );
+wp_enqueue_script( 'myaccount', get_template_directory_uri() . '/assets/javascript/myaccount.js', array('jquery'));
 
 $lang = get_bloginfo('language');
 

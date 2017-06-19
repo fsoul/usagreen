@@ -33,12 +33,12 @@ endif;
 
 function load_my_styles() {
   global $is_iphone; //loading global var here
-  if( ! $is_iphone ) {
+ // if( ! $is_iphone ) {
 	wp_enqueue_script( 'inputmask', get_template_directory_uri() . '/assets/javascript/inputmask.min.js', array('jquery'), '1', true );
 	wp_enqueue_script( 'inputmask_extensions', get_template_directory_uri() . '/assets/javascript/inputmask.phone.extensions.min.js', array('jquery'), '1', true );
 	wp_enqueue_script( 'jq_inputmask', get_template_directory_uri() . '/assets/javascript/jquery.inputmask.min.js', array('jquery'), '1', true );
 	wp_enqueue_script( 'phone_codes', get_template_directory_uri() . '/assets/javascript/phone-codes.js', array('jquery'), '1', true );
-  }
+  //}
 }
 add_action( "wp_enqueue_scripts", "load_my_styles" );
 
