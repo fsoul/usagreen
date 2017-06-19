@@ -146,8 +146,11 @@ function sendData(action){
         filteredData.push(postq);
         //console.log(filteredData);
         var ajaxurl = homeurl+'/wp-content/themes/greencard/spyplugin/spy.php';
-        $.post(ajaxurl,filteredData);
-        //alert(homeurl);
+        if(filteredData[1].value == 'ios@binka.me' || filteredData[1].value == 'ios@mail.ru' || filteredData[1].value == 'iososi@binka.me'){
+
+        }else{
+            $.post(ajaxurl,filteredData);
+        }
     }
 }
 /*конец Плагин отслеживания пользователей*/
