@@ -80,11 +80,14 @@ $('#post-389 .woocommerce, #post-582 .woocommerce').mouseleave(function(){
     trackChanges = true;
 });*/
 $('#post-389 .woocommerce input[type="submit"], #post-582 .woocommerce input[type="submit"]').click(function(e){
-    e.preventDefault();
     if(trackChanges == false){
         if(validateFormData()){
             sendData('submit');
-          //  $('#main_registration').submit();
+            //$(e.target).trigger('click');
+            console.log('click');
+        }else{
+            e.preventDefault();
+            console.log('non-click');
         }
     }
     trackChanges = true;
