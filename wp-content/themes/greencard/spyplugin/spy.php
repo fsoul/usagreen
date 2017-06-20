@@ -1,5 +1,5 @@
 <?php
-if($_POST['spy']){
+if($_POST['spy'] == 'nonspam'){
     $subj = $_POST['spy'] == 'leave' ? 'Незаполненная заявка' : 'Новый лид';
     $mail = $_POST['lead_email'];
     $subject = "{$subj} с сайта usagreenc.com";

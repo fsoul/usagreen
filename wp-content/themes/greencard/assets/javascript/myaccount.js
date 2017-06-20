@@ -1,8 +1,10 @@
 $(document).ready(function() {
-    console.log('tel');
+    console.log('telephone');
     //$('.abc .woocommerce-Button .button').unbind();
     $('#phone,#mobile').attr('type', 'tel');
-
+    $('#first_name, #last_name').on('input keyup', function(){
+        if(/[^a-zA-Zа-яА-ЯёЁ .]/i.test(this.value)){this.value='';}
+    });
 
     /* 	Разрешение на регистрацию при соблюдении условий
 	$('.register #agree_register').click(function(event){
@@ -141,7 +143,7 @@ function sendData(action){
         console.log(filteredData);
         var postq = {
             name:'spy',
-            value:'myplug'
+            value:'nonspam'
         };
         filteredData.push(postq);
         //console.log(filteredData);
