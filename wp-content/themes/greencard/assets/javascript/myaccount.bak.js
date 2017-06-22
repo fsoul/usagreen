@@ -1,19 +1,9 @@
 $(document).ready(function() {
-    $('#main_registration input[required]').on('input', function(){
-        if(this.validity.valid){
-            $(this).removeClass('validation');
-        }else{
-            $(this).addClass('validation');
-        }
-    });
-    $('#main_registration select').change(function(){
-        $(this).removeClass('validation');
-    });
-    //var first_name = $('#first_name');
-    //var last_name = $('#last_name');
+    var first_name = $('#first_name');
+    var last_name = $('#last_name');
 
-//    first_name.get(0).setCustomValidity('Недопустимые символы в поле.');
-  //  last_name.get(0).setCustomValidity('Недопустимые символы в поле.');
+    first_name.get(0).setCustomValidity('Недопустимые символы в поле.');
+    last_name.get(0).setCustomValidity('Недопустимые символы в поле.');
 
     $('#phone,#mobile').attr('type', 'tel');
 
@@ -48,10 +38,10 @@ $(document).ready(function() {
 	});
 	$("<div id='error-message' class='hidden'>We're sorry, but it seems that you are not able to participate in this year's Green Card lottery</div>").insertBefore("form.register input.woocommerce-Button");
     $('<div class="phone-flag"></div><div class="phone-country"></div>').insertAfter('#phone');
-    //var pattern = "/[a]/";
-    //console.log(pattern);
-    //first_name.prop('required', true).prop('pattern', pattern);
-    //last_name.prop('required', true).prop('pattern', "\[A\-z\-А\-я\]\+");
+    var pattern = "/[a]/";
+    console.log(pattern);
+    first_name.prop('required', true).prop('pattern', pattern);
+    //last_name.prop('required', true).prop('pattern', "[A-z-А-я]+");
     $("#birth_country").prop('required', true);
     $("#country_resid").prop('required', true);
     $("#phone").prop('required', true);
@@ -82,15 +72,11 @@ $('#phone').inputmask("phone", {
             "oncleared": function(){
             	$('.phone-country').text(''); /* clear the country code on empty mask */
             	$('.phone-flag').css({'background-image':"none"});
-            },
-            "oncomplete": function(){
-                $(this).removeClass('validation');
-            },
-            "clearIncomplete": true
-    });
+            }
+      });
 
 /*Плагин отслеживания пользователей*/
-//var trackChanges = false;
+var trackChanges = false;
 /* #~#
 $('#post-389 .woocommerce, #post-582 .woocommerce').mouseleave(function(){
     if(trackChanges == false){
@@ -99,22 +85,21 @@ $('#post-389 .woocommerce, #post-582 .woocommerce').mouseleave(function(){
     trackChanges = true;
 });*/
 $('#post-389 .woocommerce input[type="submit"], #post-582 .woocommerce input[type="submit"]').click(function(e){
-    //if(trackChanges == false){
+    if(trackChanges == false){
         if(validateFormData()){
             sendData('submit');
             //$(e.target).trigger('click');
             console.log('click');
         }else{
-            $('.validation').first().focus();
             e.preventDefault();
             console.log('non-click');
         }
-    //}
-   // trackChanges = true;
+    }
+    trackChanges = true;
 });
-//$('#post-389 .woocommerce input, #post-389 .woocommerce select, #post-582 .woocommerce input, #post-582 .woocommerce select').change(function(){
-//    trackChanges = false;
-//});
+$('#post-389 .woocommerce input, #post-389 .woocommerce select, #post-582 .woocommerce input, #post-582 .woocommerce select').change(function(){
+    trackChanges = false;
+});
 // /main_registration
 
 function validateFormData(){
@@ -136,19 +121,13 @@ function validateFormData(){
     });
 
 
-    if(errors.length == 0){
-        res = true;
-    }else{
-        /*
-        $(errors[0]).focus();
-        $(errors[0]).trigger('invalid');
-        errors[0].checkValidity();
-        console.log(errors[0]);
-        console.log('invalid -> '+ errors[0].checkValidity());*/
-    }
+    if(errors.length == 0) res = true;
     console.log('return -> '+ res);
     return res;
 }
+$('input[required], select[required]').change(function(e){
+    $(e.target).removeClass('validation');
+});
 function sendData(action){
     console.log('sendData');
 

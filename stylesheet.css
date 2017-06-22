@@ -1,3 +1,9 @@
 .validation{
     border: 1px solid #b81c23 !important;
 }
+/*input:invalid {*/
+    /*border: 1px solid #b81c23;*/
+/*}*/
+/*input:valid {*/
+    /*border: 2px solid black;*/
+/*}*/
