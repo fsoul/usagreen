@@ -31,7 +31,7 @@ class URA_HTML
 		if( !is_plugin_active( 'theme-my-login/theme-my-login.php' ) ){
 			?>
 			<div class="large-3 medium-12 columns">
-			<label><?php _e( $label, 'user-registration-aide' ); ?></label>
+			<label id="<? echo $id; ?>_label"><?php _e( $label, 'user-registration-aide' ); ?></label>
 			</div>
 			<div class="large-9 medium-12 columns">
 			<input autocomplete="on" type="text" name="<?php echo $name; ?>" id="<?php echo $id; ?>" class="input" value="<?php echo $value;?>" />
@@ -179,7 +179,7 @@ class URA_HTML
 		?>
 		<div class="large-3 medium-12 columns">
 <!-- test t2 -->
-		<label><?php _e( $label, 'user-registration-aide' ); ?></label>
+		<label class="cstm_label"><?php _e( $label, 'user-registration-aide' ); ?></label>
 		</div>
 		<div class="large-9 medium-12 columns radio-box">
 		<?php

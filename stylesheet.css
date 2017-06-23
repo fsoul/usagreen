@@ -1,5 +1,22 @@
 .validation{
+    position: relative;
     border: 1px solid #b81c23 !important;
+}
+.validationError{
+    position: absolute;
+    color: #b81c23;
+    font-size: 12px;
+    bottom: 5px;
+    left: 20px;
+}
+.cstm_label{
+    line-height: 20px;
+}
+.last_row, #main_registration input[type="text"][required], #main_registration input[type="email"][required], #main_registration input[type="tel"][required], #main_registration select[required]{
+    margin-bottom: 25px !important;
+}
+.last_row{
+    display: none;
 }
 /*input:invalid {*/
     /*border: 1px solid #b81c23;*/

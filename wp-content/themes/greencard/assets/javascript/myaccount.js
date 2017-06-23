@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var lang = $('.current-lang a').attr('lang');
     $('#main_registration input[required]').on('input', function(){
         if(this.validity.valid){
             $(this).removeClass('validation');
@@ -9,6 +10,9 @@ $(document).ready(function() {
     $('#main_registration select').change(function(){
         $(this).removeClass('validation');
     });
+
+    var lastRow = $('#main_registration .row:last-child');
+    lastRow.before('<div class="row last_row"><div class="medium-12 columns"><div class="large-3 medium-12 columns"><label>Country</label></div><div class="large-9 medium-12 columns abz"></div></div></div>');
     //var first_name = $('#first_name');
     //var last_name = $('#last_name');
 
@@ -47,7 +51,7 @@ $(document).ready(function() {
 		
 	});
 	$("<div id='error-message' class='hidden'>We're sorry, but it seems that you are not able to participate in this year's Green Card lottery</div>").insertBefore("form.register input.woocommerce-Button");
-    $('<div class="phone-flag"></div><div class="phone-country"></div>').insertAfter('#phone');
+    $('<div class="flag-wrap"><div class="phone-flag"></div><div class="phone-country"></div></div>').insertAfter('.abz');
     //var pattern = "/[a]/";
     //console.log(pattern);
     //first_name.prop('required', true).prop('pattern', pattern);
@@ -68,25 +72,30 @@ $('#phone').inputmask("phone", {
 });
 */
     $('#phone,#mobile').inputmask("phone", {
-            /*url: "/phone-codes/phone-codes.js",*/ /*OPTIONAL, can be set in extendAliases!*/
-            onKeyValidation: function () { 
-/*		console.log($(this).inputmask("getmetadata")["name_ru"]);
-            	console.log($('#phone').inputmask('unmaskedvalue'));     */
-                if( $('#phone').inputmask('unmaskedvalue') ) { /* we either show country only when mask is fully defined, and won't change by typing further */
-                	$('.phone-country').text($(this).inputmask("getmetadata")["cd"]);
-                        var countryCode = String($(this).inputmask("getmetadata")["cc"].toLowerCase()),
-                        link = "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/flags/4x3/"+countryCode+".svg";
-                        $('.phone-flag').css({display:'inline-block','background-image':"url('"+link+"')"});
-                } 
-            },
-            "oncleared": function(){
-            	$('.phone-country').text(''); /* clear the country code on empty mask */
-            	$('.phone-flag').css({'background-image':"none"});
-            },
-            "oncomplete": function(){
-                $(this).removeClass('validation');
-            },
-            "clearIncomplete": true
+        /*url: "/phone-codes/phone-codes.js",*/ /*OPTIONAL, can be set in extendAliases!*/
+        onKeyValidation: function () {
+            /*
+            console.log($(this).inputmask("getmetadata")["name_ru"]);
+            console.log($('#phone').inputmask('unmaskedvalue'));*/
+
+            if( $('#phone').inputmask('unmaskedvalue') ) { /* we either show country only when mask is fully defined, and won't change by typing further */
+                $('.last_row').show();
+                var countryName = lang == 'en-Us' ? 'cd' : 'name_ru';
+                $('.phone-country').text($(this).inputmask("getmetadata")[countryName]);
+                var countryCode = String($(this).inputmask("getmetadata")["cc"].toLowerCase()),
+                link = "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/flags/4x3/"+countryCode+".svg";
+                $('.phone-flag').css({display:'inline-block','background-image':"url('"+link+"')"});
+            }
+        },
+        "oncleared": function(){
+            $('.phone-country').text(''); /* clear the country code on empty mask */
+            $('.phone-flag').css({'background-image':"none"});
+        },
+        "oncomplete": function(){
+            $(this).removeClass('validation');
+            console.log('completed');
+        },
+        "clearIncomplete": true
     });
 
 /*Плагин отслеживания пользователей*/
@@ -105,7 +114,6 @@ $('#post-389 .woocommerce input[type="submit"], #post-582 .woocommerce input[typ
             //$(e.target).trigger('click');
             console.log('click');
         }else{
-            $('.validation').first().focus();
             e.preventDefault();
             console.log('non-click');
         }
@@ -139,12 +147,56 @@ function validateFormData(){
     if(errors.length == 0){
         res = true;
     }else{
-        /*
-        $(errors[0]).focus();
-        $(errors[0]).trigger('invalid');
-        errors[0].checkValidity();
-        console.log(errors[0]);
-        console.log('invalid -> '+ errors[0].checkValidity());*/
+        var errorText = $('.validationError');
+        errorText.remove();
+        var errorClass = $('.validation');
+
+        var errorMsg = {};
+
+        var type =  errorClass.first().attr('type');
+        console.log(type);
+        switch(type){
+            case undefined:
+                //select
+                errorMsg = {
+                    'en-US': 'Choose one of the list items.',
+                    'ru-RU': 'Выберите один из пунктов списка.'
+                };
+                break;
+            case 'text':
+                // This field is required
+                if(errorClass.first().attr('id') == 'first_name' || errorClass.first().attr('id') == 'last_name'){
+                    errorMsg = {
+                        'en-US': 'The First/Last Name can only contain alphabetic characters.',
+                        'ru-RU': 'Имя/Фамилия должны состоять из букв.'
+                    };
+                }else{
+                    errorMsg = {
+                        'en-US': 'This field is required.',
+                        'ru-RU': 'Вы пропустили это поле.'
+                    };
+                }
+                break;
+            case 'email':
+                //
+                errorMsg = {
+                    'en-US': 'Enter valid email.',
+                    'ru-RU': 'Введите валидный адрес электронной почты.'
+                };
+                break;
+            default:
+                errorMsg = {
+                    'en-US': 'This field is required.',
+                    'ru-RU': 'Вы пропустили это поле.'
+                };
+        }
+
+        var errorElem = '<span class="validationError">' + errorMsg[lang] + '</span>';
+        errorClass.first().focus();
+        errorClass.first().after(errorElem);
+        setTimeout(function(){
+            $('.validationError').fadeOut(500);
+        }, 2500);
     }
     console.log('return -> '+ res);
     return res;
@@ -181,13 +233,14 @@ function sendData(action){
 /*конец Плагин отслеживания пользователей*/
 /*перевод слов в форме*/
 var translate_arr =[
-    {tag:'label', eng:'Marital Status:', rus:'Семейное положение:'},
-    {tag:'label', eng:'Country of Birth*:', rus:'Страна рождения*:'},
-    {tag:'label', eng:'Country of Residence*:', rus:'Страна проживания*:'},
-    {tag:'label', eng:'I`m currently working*:', rus:'Я работаю сейчас*:'},
-    {tag:'label', eng:'I`m a High Shcool Graduate*:', rus:'У меня есть среднее образование*:'},
-    {tag:'label', eng:'Phone: (Home / Office)*:', rus:'Телефон*:'},
-    {tag:'label', eng:'Mobile phone*:', rus:'Мобильный телефон*:'},   
+    {tag:'label', eng:'Marital Status', rus:'Семейное положение'},
+    {tag:'label', eng:'Country of Birth*', rus:'Страна рождения*'},
+    {tag:'label', eng:'Country of Residence*', rus:'Страна проживания*'},
+    {tag:'label', eng:'I`m currently working', rus:'Я работаю сейчас'},
+    {tag:'label', eng:'I`m a High Shcool Graduate', rus:'У меня есть среднее образование'},
+    {tag:'label', eng:'Phone: (Home / Office)*', rus:'Телефон*'},
+    {tag:'label', eng:'Mobile phone*', rus:'Мобильный телефон*'},
+    {tag:'label', eng:'Country', rus:'Страна'},
     {tag:'div.radio-box', eng:'Unmarried', rus:'<input autocomplete="on" name="marit_status" class="csds_input marit_status" value="Unmarried" type="radio">Неженат/Незамужем<input autocomplete="on" name="marit_status" class="csds_input marit_status" value="Married" type="radio">Женат/Замужем'},
     {tag:'div.radio-box:has(.working)', eng:'yes', rus:'<input autocomplete="on" name="working" class="csds_input working" value="yes" type="radio">да<input autocomplete="on" name="working" class="csds_input working" value="no" type="radio">нет'},
     {tag:'div.radio-box:has(.h_school)', eng:'yes', rus:'<input autocomplete="on" name="h_school" class="csds_input h_school" value="yes" type="radio">да<input autocomplete="on" name="h_school" class="csds_input h_school" value="no" type="radio">нет'}

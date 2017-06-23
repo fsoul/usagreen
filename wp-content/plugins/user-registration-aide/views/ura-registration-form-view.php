@@ -263,7 +263,7 @@ class URA_REGISTRATION_FORM_VIEW
 		<!-- test 14 -->
 		</label></div>
 		<div class="large-9 medium-12 columns">
-		<input title="Только буквы" type="text" name="<?php echo $fieldKey; ?>" id="<?php echo $fieldKey; ?>" autocomplete="on" class="input" size="25" pattern="[A-z-А-я]+" required/></label>
+		<input type="text" name="<?php echo $fieldKey; ?>" id="<?php echo $fieldKey; ?>" autocomplete="on" class="input" size="25" pattern="[A-z-А-я]+" required/></label>
 		</div>
 		<!-- first/last name -->
 		<?php
