@@ -191,7 +191,7 @@ function validateFormData(){
                 };
         }
 
-        var errorElem = '<span class="validationError">' + errorMsg[lang] + '</span>';
+        var errorElem = '<p class="validationError">' + errorMsg[lang] + '</p>';
         errorClass.first().focus();
         errorClass.first().after(errorElem);
         setTimeout(function(){
