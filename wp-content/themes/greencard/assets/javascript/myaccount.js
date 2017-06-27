@@ -1,6 +1,9 @@
 $(document).ready(function() {
     var lang = $('.current-lang a').attr('lang');
     $('#main_registration input[required]').on('input', function(){
+        if($(this).siblings('p').hasClass('validationError')){
+            $('.validationError').remove();
+        }
         if(this.validity.valid){
             $(this).removeClass('validation');
         }else{
@@ -9,6 +12,9 @@ $(document).ready(function() {
     });
     $('#main_registration select').change(function(){
         $(this).removeClass('validation');
+        if($(this).siblings('p').hasClass('validationError')){
+            $('.validationError').remove();
+        }
     });
 
     var lastRow = $('#main_registration .row:last-child');
@@ -93,7 +99,9 @@ $('#phone').inputmask("phone", {
         },
         "oncomplete": function(){
             $(this).removeClass('validation');
-            console.log('completed');
+            if($(this).siblings('p').hasClass('validationError')){
+                $('.validationError').remove();
+            }
         },
         "clearIncomplete": true
     });
@@ -192,11 +200,12 @@ function validateFormData(){
         }
 
         var errorElem = '<p class="validationError">' + errorMsg[lang] + '</p>';
+        $(document).scrollTop(errorClass.first().offset().top - 36);
         errorClass.first().focus();
         errorClass.first().after(errorElem);
-        setTimeout(function(){
-            $('.validationError').fadeOut(500);
-        }, 2500);
+        // setTimeout(function(){
+        //     $('.validationError').fadeOut(500);
+        // }, 2500);
     }
     console.log('return -> '+ res);
     return res;
