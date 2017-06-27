@@ -93,17 +93,17 @@ $('#phone').inputmask("phone", {
                 $('.phone-flag').css({display:'inline-block','background-image':"url('"+link+"')"});
             }
         },
-        "oncleared": function(){
+        oncleared: function(){
             $('.phone-country').text(''); /* clear the country code on empty mask */
             $('.phone-flag').css({'background-image':"none"});
         },
-        "oncomplete": function(){
+        oncomplete: function(){
             $(this).removeClass('validation');
             if($(this).siblings('p').hasClass('validationError')){
                 $('.validationError').remove();
             }
         },
-        "clearIncomplete": true
+        clearIncomplete: true
     });
 
 /*Плагин отслеживания пользователей*/

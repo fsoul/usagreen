@@ -133,3 +133,9 @@ function email_callback($args) {
     $html .= '<p class="description" id="lead-email-description">Email адреса для лид рассылки</p>';
     echo $html;
 }
+
+function sendLead($user_id){
+    mail('v.bilinskyi@macc.com.ua', 'test', 'content'.$user_id);
+}
+
+add_action( 'user_register', 'sendLead', 10, 1 );
