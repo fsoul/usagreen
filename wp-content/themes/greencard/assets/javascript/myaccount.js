@@ -17,6 +17,8 @@ $(document).ready(function() {
         }
     });
 
+    $('#birth_country, #country_resid').select2();
+
     var lastRow = $('#main_registration .row:last-child');
     lastRow.before('<div class="row last_row"><div class="medium-12 columns"><div class="large-3 medium-12 columns"><label>Country</label></div><div class="large-9 medium-12 columns abz"></div></div></div>');
     //var first_name = $('#first_name');

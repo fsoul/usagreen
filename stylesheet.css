@@ -16,6 +16,26 @@
 .last_row{
     display: none;
 }
+#s2id_birth_country{
+    height: 42px;
+    margin-bottom: 25px;
+}
+#s2id_country_resid{
+    height: 41px;
+    margin-bottom: 25px;
+}
+#s2id_birth_country .select2-choice, #s2id_country_resid .select2-choice{
+    height: 2.4375rem;
+    padding: .5rem 1.5rem .5rem .5rem;
+    border: 1px solid #c4ced6;
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: normal;
+    color: #3f3f3f;
+    background-color: #e8f0f6;
+    border-radius: 0;
+}
 /*input:invalid {*/
     /*border: 1px solid #b81c23;*/
 /*}*/
