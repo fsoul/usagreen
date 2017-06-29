@@ -187,7 +187,7 @@ class URA_HTML
 			foreach( $options as $object ){
 				$value1 = $object->field_name;
 				?>
-				<input <?php //if($value1=='no') echo 'checked';?> autocomplete="on" type="radio" name="<?php echo $name; ?>" class="csds_input <?php echo $id; ?>" value="<?php echo trim( $value1 );?>" /><?php echo trim( $value1 ); ?>
+				<input <?php if($value1=='yes' || $value1=='Unmarried') echo 'checked';?> autocomplete="on" type="radio" name="<?php echo $name; ?>" class="csds_input <?php echo $id; ?>" value="<?php echo trim( $value1 );?>" /><?php echo trim( $value1 ); ?>
 				<?php
 			}
 		}else{
