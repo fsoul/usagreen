@@ -16,11 +16,7 @@
 .last_row{
     display: none;
 }
-#s2id_birth_country{
-    height: 42px;
-    margin-bottom: 25px;
-}
-#s2id_country_resid{
+#s2id_birth_country, #s2id_country_resid{
     height: 41px;
     margin-bottom: 25px;
 }

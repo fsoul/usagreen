@@ -135,7 +135,30 @@ function email_callback($args) {
 }
 
 function sendLead($user_id){
-    mail('v.bilinskyi@macc.com.ua', 'test', 'content'.$user_id);
+    if($_POST['register']){
+        $to = get_option('show_email');
+        $subject = "Новый лид с сайта usagreenc.com";
+        $domain = "usagreenc.com";
+        $from = "no-reply@". $domain;
+        $headers = "From: " . $from . "\r\n";
+        $headers .= "Reply-To: ". $from . "\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $template_data = "<tr><td>user_id: </td><td>$user_id</td></tr>";
+        unset($_POST['email_2']);
+        unset($_POST['userRegAide_RegFormNonce']);
+        unset($_POST['woocommerce-register-nonce']);
+        unset($_POST['_wp_http_referer']);
+        unset($_POST['lead_email']);
+        unset($_POST['register']);
+
+        foreach ($_POST as $key => $val){
+            $val = htmlentities($val);
+            $template_data .= "<tr><td>{$key}:</td><td>$val</td></tr>";
+        }
+        $template_mail = "<html><body><table>$template_data</table></body></html>";
+        $result = mail($to, $subject, $template_mail, $headers);
+    }
 }
 
 add_action( 'user_register', 'sendLead', 10, 1 );

@@ -1,20 +1,64 @@
 $(document).ready(function() {
     var lang = $('.current-lang a').attr('lang');
     $('#main_registration input[required]').on('input', function(){
-        if($(this).siblings('p').hasClass('validationError')){
-            $('.validationError').remove();
+        $(this).siblings('p').remove('.validationError');
+
+        var type = this.getAttribute('type');
+        switch(type){
+            case undefined:
+                //select
+                errorMsg = {
+                    'en-US': 'Choose one of the list items.',
+                    'ru-RU': 'Выберите один из пунктов списка.'
+                };
+                break;
+            case 'text':
+                // This field is required
+                if(this.id == 'first_name' || this.id == 'last_name'){
+                    errorMsg = {
+                        'en-US': 'The First/Last Name can only contain alphabetic characters.',
+                        'ru-RU': 'Имя/Фамилия должны состоять из букв.'
+                    };
+                }else{
+                    errorMsg = {
+                        'en-US': 'This field is required.',
+                        'ru-RU': 'Вы пропустили это поле.'
+                    };
+                }
+                break;
+            case 'email':
+                //
+                errorMsg = {
+                    'en-US': 'Enter valid email.',
+                    'ru-RU': 'Введите валидный адрес электронной почты.'
+                };
+                break;
+            default:
+                errorMsg = {
+                    'en-US': 'This field is required.',
+                    'ru-RU': 'Вы пропустили это поле.'
+                };
         }
+        if(!this.value) {
+            errorMsg = {
+                'en-US': 'This field is required.',
+                'ru-RU': 'Вы пропустили это поле.'
+            };
+        }
+        var errorElem = '<p class="validationError">' + errorMsg[lang] + '</p>';
+
+
         if(this.validity.valid){
             $(this).removeClass('validation');
+            $(this).remove('.validationError');
         }else{
             $(this).addClass('validation');
+            $(this).after(errorElem);
         }
     });
     $('#main_registration select').change(function(){
         $(this).removeClass('validation');
-        if($(this).siblings('p').hasClass('validationError')){
-            $('.validationError').remove();
-        }
+        $(this).siblings('p').remove('.validationError');
     });
 
     $('#birth_country, #country_resid').select2();
@@ -101,9 +145,7 @@ $('#phone').inputmask("phone", {
         },
         oncomplete: function(){
             $(this).removeClass('validation');
-            if($(this).siblings('p').hasClass('validationError')){
-                $('.validationError').remove();
-            }
+            $(this).siblings('p').remove('.validationError');
         },
         clearIncomplete: true
     });
@@ -120,7 +162,7 @@ $('#post-389 .woocommerce, #post-582 .woocommerce').mouseleave(function(){
 $('#post-389 .woocommerce input[type="submit"], #post-582 .woocommerce input[type="submit"]').click(function(e){
     //if(trackChanges == false){
         if(validateFormData()){
-            sendData('submit');
+            //sendData('submit');
             //$(e.target).trigger('click');
             console.log('click');
         }else{
@@ -146,10 +188,16 @@ function validateFormData(){
 
     console.log('validation start');
     console.log('color');
+    $('.validationError').remove();
     $.each($reqFields, function (indx, el) {
         if(!el.value){
+            var errorMsg = {
+                'en-US': 'This field is required.',
+                'ru-RU': 'Вы пропустили это поле.'
+            };
             errors.push(el);
             $(el).addClass('validation');
+            $(el).after('<p class="validationError">' + errorMsg[lang] + '</p>');
         }
     });
 
@@ -157,8 +205,6 @@ function validateFormData(){
     if(errors.length == 0){
         res = true;
     }else{
-        var errorText = $('.validationError');
-        errorText.remove();
         var errorClass = $('.validation');
 
         var errorMsg = {};
@@ -204,7 +250,6 @@ function validateFormData(){
         var errorElem = '<p class="validationError">' + errorMsg[lang] + '</p>';
         $(document).scrollTop(errorClass.first().offset().top - 36);
         errorClass.first().focus();
-        errorClass.first().after(errorElem);
         // setTimeout(function(){
         //     $('.validationError').fadeOut(500);
         // }, 2500);
