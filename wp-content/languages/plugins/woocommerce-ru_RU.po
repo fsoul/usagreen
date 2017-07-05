@@ -4535,6 +4535,9 @@ msgstr "Следующие адреса будут использованы пр
 msgid "From your account dashboard you can view your %1$srecent orders%2$s, manage your %3$sshipping and billing addresses%2$s and %4$sedit your password and account details%2$s."
 msgstr "В консоли вашего аккаунта вы можете просматривать %1$sнедавние заказы%2$s, настроить %3$sадрес доставки и платёжный адрес%2$s, а также %4$sизменить пароль и анкету%2$s."
 
+msgid "From your account you can view your recent orders, %1$sedit your password and account details%2$s."
+msgstr "В вашем аккаунте вы можете просматривать недавние заказы, %1$sизменять пароль и анкету%2$s."
+
 #: templates/myaccount/form-lost-password.php:40
 msgid "Reset Password"
 msgstr "Сбросить пароль"

@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <p>
 	<?php
-		echo sprintf( esc_attr__( 'From your account you can view your recent orders, manage  %1$sedit your password and account details%2$s.', 'woocommerce' ), '<a href="' . esc_url( wc_get_endpoint_url( 'edit-account' ) ) . '">' , '</a>');
+		echo sprintf( esc_attr__( 'From your account you can view your recent orders, %1$sedit your password and account details%2$s.', 'woocommerce' ), '<a href="' . esc_url( wc_get_endpoint_url( 'edit-account' ) ) . '">' , '</a>');
 	?>
 </p>
 
