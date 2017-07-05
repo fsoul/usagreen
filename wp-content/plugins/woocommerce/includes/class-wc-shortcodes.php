@@ -60,7 +60,7 @@ class WC_Shortcodes {
 		$function,
 		$atts    = array(),
 		$wrapper = array(
-			'class'  => 'woocommerce',
+			'class'  => 'woocommerce row',
 			'before' => null,
 			'after'  => null
 		)

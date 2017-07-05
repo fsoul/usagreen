@@ -192,7 +192,9 @@ class WC_Shortcode_My_Account {
 		 * After reset, show confirmation message.
 		 */
 		} elseif ( ! empty( $_GET['reset'] ) ) {
-			wc_add_notice( __( 'Your password has been reset.', 'woocommerce' ) . ' <a class="button" href="' . esc_url( wc_get_page_permalink( 'myaccount' ) ) . '">' . __( 'Log in', 'woocommerce' ) . '</a>' );
+			//wc_add_notice( __( 'Your password has been reset.', 'woocommerce' ) . ' <a class="button" href="' . esc_url( wc_get_page_permalink( 'myaccount' ) ) . '">' . __( 'Log in', 'woocommerce' ) . '</a>' ); #~#
+            $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+            wc_add_notice( __( 'Your password has been reset.', 'woocommerce' ) . ' <a class="button" href="' . $actual_link . '/login">' . __( 'Log in', 'woocommerce' ) . '</a>' );
 
 		/**
 		 * Process reset key / login from email confirmation link
