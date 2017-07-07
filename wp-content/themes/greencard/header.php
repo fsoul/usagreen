@@ -45,11 +45,12 @@
 					</div>
 				<div class="top-right-wraper">
 					<?php do_action( 'foundationpress_before_top-right' ); ?>
-						<?php dynamic_sidebar( 'top-right-widgets' ); ?>
+
 						<?php if (get_current_user_id()) :
-							dynamic_sidebar( 'top_reg_sideb' ); 
+							dynamic_sidebar( 'top_reg_sideb' );
 						else :
-							dynamic_sidebar( 'top_notreg_sideb' ); 
+                            dynamic_sidebar( 'top-right-widgets' );
+                            dynamic_sidebar( 'top_notreg_sideb' );
 						endif;
 						?>
 						
