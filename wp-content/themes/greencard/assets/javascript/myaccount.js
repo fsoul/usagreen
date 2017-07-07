@@ -202,7 +202,7 @@ function validateFormData(){
     });
 
 
-    if(errors.length == 0){
+    if(errors.length == 0 && !($reqFields.hasClass('validation'))){
         res = true;
     }else{
         var errorClass = $('.validation');
