@@ -162,3 +162,11 @@ function sendLead($user_id){
 }
 
 add_action( 'user_register', 'sendLead', 10, 1 );
+
+add_action( 'woocommerce_save_account_details', 'my_woocommerce_save_account_details' );
+function my_woocommerce_save_account_details( $user_id ) {
+
+    update_user_meta( $user_id, 'phone', htmlentities( $_POST[ 'account_phone' ] ) );
+    update_user_meta( $user_id, 'mobile', htmlentities( $_POST[ 'account_mobile' ] ) );
+
+}
