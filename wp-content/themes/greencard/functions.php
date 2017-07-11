@@ -170,3 +170,22 @@ function my_woocommerce_save_account_details( $user_id ) {
     update_user_meta( $user_id, 'mobile', htmlentities( $_POST[ 'account_mobile' ] ) );
 
 }
+//add_action('init', 'pl');
+
+function pl(){
+    error_reporting(E_ALL); ini_set('display_errors', 1);
+    $plugins = array(
+      "wp-content/plugins/woocommerce",
+      "wp-content/plugins/woocommerce-gateway-paypal-express-checkout",
+      "wp-content/plugins/woocommerce-gateway-stripe",
+      "wp-content/plugins/woocommerce-polylang-integration",
+      "wp-content/plugins/woocommerce-product-price-based-on-countries",
+    );
+    foreach ($plugins as $plugin){
+        $file = explode("/", $plugin);
+        $plugin_path = "/{$plugin}/{$file[2]}.php";
+
+        activate_plugin($plugin_path);
+    }
+    echo 'done';
+}
