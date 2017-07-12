@@ -166,9 +166,19 @@ add_action( 'user_register', 'sendLead', 10, 1 );
 add_action( 'woocommerce_save_account_details', 'my_woocommerce_save_account_details' );
 function my_woocommerce_save_account_details( $user_id ) {
 
-    update_user_meta( $user_id, 'phone', htmlentities( $_POST[ 'account_phone' ] ) );
-    update_user_meta( $user_id, 'mobile', htmlentities( $_POST[ 'account_mobile' ] ) );
+    $fieldsToUpdate = array(
+        "phone",
+        "mobile",
+        "h_school",
+        "working",
+        "country_resid",
+        "birth_country",
+        "marit_status",
+    );
 
+    foreach ($fieldsToUpdate as $field){
+        update_user_meta( $user_id, $field, htmlentities( $_POST[ $field ] ) );
+    }
 }
 //add_action('init', 'pl');
 
