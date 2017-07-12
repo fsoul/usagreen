@@ -175,11 +175,28 @@ function my_woocommerce_save_account_details( $user_id ) {
 function pl(){
     error_reporting(E_ALL); ini_set('display_errors', 1);
     $plugins = array(
-      "wp-content/plugins/woocommerce",
-      "wp-content/plugins/woocommerce-gateway-paypal-express-checkout",
-      "wp-content/plugins/woocommerce-gateway-stripe",
-      "wp-content/plugins/woocommerce-polylang-integration",
-      "wp-content/plugins/woocommerce-product-price-based-on-countries",
+      "polylang/polylang.php ",
+      "akeebabackupwp/akeebabackupwp.php",
+      "black-studio-tinymce-widget/black-studio-tinymce-widget.php",
+      "buttons-shortcode-and-widget/otw_content_manager.php",
+      "easy-modal/easy-modal.php",
+      "contact-form-7/wp-contact-form-7.php",
+      "easylogo/easylogo.php",
+      "enhanced-media-library/enhanced-media-library.php",
+      "image-widget/image-widget.php",
+      "loco-translate/loco.php",
+      "tinymce-advanced/tinymce-advanced.php",
+      "tutsplus-product-archive-short-descriptions.php1_/tutsplus-product-archive-short-descriptions.php",
+      "unyson/unyson.php",
+      "user-registration-aide/user-registration-aide.php",
+      "woo-checkout-field-editor-pro/checkout-form-designer.php",
+      "woo-login-redirect/redirect.php",
+      "woo-poly-integration/__init__.php",
+      "woocommerce-gateway-paypal-express-checkout/woocommerce-gateway-paypal-express-checkout.php",
+      "woocommerce-gateway-stripe/woocommerce-gateway-stripe.php",
+      "woocommerce-polylang-integration/woocommerce-polylang-integration.php",
+      "woocommerce-product-price-based-on-countries/woocommerce-product-price-based-on-countries.php",
+      "authorizenet-woocommerce-addon/authorize.net-woocommerce-addon.php",
     );
     foreach ($plugins as $plugin){
         $file = explode("/", $plugin);

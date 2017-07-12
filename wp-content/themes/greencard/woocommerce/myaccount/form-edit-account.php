@@ -17,8 +17,11 @@
  */
 
 $user_id = get_current_user_id();
+$user  = get_userdata($user_id);
 $user_meta = get_user_meta( $user_id );
-
+var_dump($user);
+echo '<hr>';
+var_dump($user_meta);
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
