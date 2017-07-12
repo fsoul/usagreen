@@ -350,8 +350,11 @@ msgstr "Мобильный телефон"
 
 #: woocommerce/myaccount/dashboard.php:96
 msgid "Phone: (Home / Office):"
-msgstr "Телефон: (Домашний / Оффис)"
+msgstr "Телефон: (Домашний / Офис)"
 
 #: woocommerce/myaccount/dashboard.php:251
 msgid "You have choise subscrible to GREEN CARD LOTTERY"
-msgstr "Вы можете выбрать вид подписки GREEN CARD лотореи"
+msgstr "Вы можете выбрать вид подписки GREEN CARD лотeреи"
+
+msgid "User info table"
+msgstr "Анкета пользователя"

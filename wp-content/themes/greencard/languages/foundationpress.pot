@@ -268,3 +268,6 @@ msgstr ""
 #: searchform.php:6 searchform.php:10
 msgid "Search"
 msgstr ""
+
+msgid "User info table"
+msgstr ""
