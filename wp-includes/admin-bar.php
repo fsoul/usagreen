@@ -266,9 +266,8 @@ function wp_admin_bar_my_account_menu( $wp_admin_bar ) {
 		'parent' => 'user-actions',
 		'id'     => 'logout',
 		'title'  => __( 'Log Out' ),
-		'href'   => wp_logout_url(),
-        //'href'   => 'http://194.247.174.84/wp-login.php?action=logout',
-        // #~#
+        'href'   => home_url().'/wp-login.php?action=logout',
+        //'href'   => wp_logout_url(),
     ) );
 }
 
