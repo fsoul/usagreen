@@ -29,6 +29,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+add_action( "wp_enqueue_scripts", "load_my_styles" );
+
+wp_enqueue_script( 'edit-validation', get_template_directory_uri() . '/assets/javascript/edit-validation.js', array('jquery'));
+
 do_action( 'woocommerce_before_edit_account_form' ); ?>
 
 <form class="woocommerce-EditAccountForm edit-account" action="" method="post">
