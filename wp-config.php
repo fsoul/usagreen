@@ -20,7 +20,7 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'kresloka_usag');
+define('DB_NAME', 'kresloka_usag_test');
 
 /** Имя пользователя MySQL */
 define('DB_USER', 'kresloka_usag');
