@@ -57,12 +57,12 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
     <!--  user meta data #~# -->
     <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
         <label for="phone"><?php _e( 'Phone', 'woocommerce' ); ?></label>
-        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" id="phone" value="<?php echo esc_attr( $user_meta['phone'][0] ); ?>" />
+        <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" id="phone" value="<?php echo esc_attr( $user_meta['phone'][0] ); ?>" />
     </p>
 
     <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
         <label for="mobile"><?php _e( 'Mobile', 'woocommerce' ); ?></label>
-        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="mobile" id="mobile" value="<?php echo esc_attr( $user_meta['mobile'][0] ); ?>" />
+        <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="mobile" id="mobile" value="<?php echo esc_attr( $user_meta['mobile'][0] ); ?>" />
     </p>
 
     <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
