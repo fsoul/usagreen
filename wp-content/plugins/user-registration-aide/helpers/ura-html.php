@@ -235,7 +235,7 @@ class URA_HTML
 				 * <option value="<?php echo trim( $value1 );?>" ><?php echo trim( $value1 ); ?> </option>
 				*/
 				?>
-				<option value="<?php echo trim( $value1 );?>" <?php echo $selected ;?> ><?php _e( trim( $value1 ), 'user-registration-aide' );?></option>
+				<option value="<?php echo trim( $value1 );?>" <?php echo $selected ;?> ><?php _e( trim( $value1 ), 'woocommerce' );?></option>
 				<?php
 			}
 		}else{

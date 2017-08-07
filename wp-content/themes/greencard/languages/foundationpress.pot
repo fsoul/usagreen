@@ -271,3 +271,9 @@ msgstr ""
 
 msgid "User info table"
 msgstr ""
+
+msgid "Married"
+msgstr ""
+
+msgid "Unmarried"
+msgstr ""

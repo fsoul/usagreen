@@ -5,6 +5,7 @@
 $(document).ready(function() {
 
     $('#phone, #mobile').inputmask('phone');
+    $('#birth_country, #country_resid').select2();
 
     /*
     $('input[name="save_account_detailsa"]').click(function(e){

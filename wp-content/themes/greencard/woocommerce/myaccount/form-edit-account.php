@@ -19,6 +19,7 @@
 $user_id = get_current_user_id();
 $user  = get_userdata($user_id);
 $user_meta = get_user_meta( $user_id );
+//$current_lang = get_locale();
 //var_dump($user);
 //echo '<hr>';
 //var_dump($user_meta);
@@ -39,7 +40,12 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 
 	<?php do_action( 'woocommerce_edit_account_form_start' ); ?>
 
-	<p class="woocommerce-FormRow woocommerce-FormRow--first form-row form-row-wide">
+    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+        <label for="account_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
+        <input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" value="<?php echo esc_attr( $user->user_email ); ?>" />
+    </p>
+
+    <p class="woocommerce-FormRow woocommerce-FormRow--first form-row form-row-wide">
 		<label for="account_first_name"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label>
 		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" value="<?php echo esc_attr( $user->first_name ); ?>" />
 	</p>
@@ -49,12 +55,120 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 	</p>
 	<div class="clear"></div>
 
-	<p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-		<label for="account_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
-		<input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" value="<?php echo esc_attr( $user->user_email ); ?>" />
-	</p>
-
     <!--  user meta data #~# -->
+    <?php
+    $field = new FIELDS_DATABASE();
+    $options = $field->get_total_field_options( 'birth_country' );
+    ?>
+
+    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide radio-indent">
+        <label for="marit_status"><?php _e( 'Marital Status', 'foundationpress' ); ?></label>
+        <?php
+        $marit = $field->get_total_field_options( 'marit_status' );
+        if( !empty( $marit ) ){
+            foreach( $marit as $object ){
+                $value1 = $object->field_name;
+                ?>
+                <input <?php if($value1 == esc_attr( $user_meta['marit_status'][0] )) echo 'checked';?> type="radio" name="marit_status" class="csds_input" value="<?php echo trim( $value1 );?>" /><?php _e( $value1, 'foundationpress' ); ?>
+                <?php
+            }
+        }else{
+            ?>
+            <?php _e( 'No Options for This Field at This Time!', 'user-registration-aide' ); ?>
+            <?php
+        }
+        ?>
+    </p>
+
+    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+        <label for="birth_country"><?php _e( 'Country of Birth', 'foundationpress' ); ?></label>
+        <select name="birth_country" id="birth_country">
+            <?php
+            if( !empty( $options ) ){
+                foreach( $options as $object ){
+                    $value1 = $object->field_name;
+                    if( $value1 == esc_attr( $user_meta['birth_country'][0]) ){
+                        $selected = "selected=\"selected\"";
+                    }else{
+                        $selected = NULL;
+                    }
+                    ?>
+                    <option value="<?php echo trim( $value1 );?>" <?php echo $selected ;?> ><?php _e( trim( $value1 ), 'woocommerce' );?></option>
+                    <?php
+                }
+            }else{
+                ?>
+                <option value="no_value"><?php _e( 'No Options for This Field at This Time!', 'user-registration-aide' ); ?></option>
+                <?php
+            }
+            ?>
+        </select>
+    </p>
+
+    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+        <label for="country_resid"><?php _e( 'Country of Residence', 'foundationpress' ); ?></label>
+        <select name="country_resid" id="country_resid">
+            <?php
+            if( !empty( $options ) ){
+                foreach( $options as $object ){
+                    $value1 = $object->field_name;
+                    if( $value1 == esc_attr( $user_meta['country_resid'][0]) ){
+                        $selected = "selected=\"selected\"";
+                    }else{
+                        $selected = NULL;
+                    }
+                    ?>
+                    <option value="<?php echo trim( $value1 );?>" <?php echo $selected ;?> ><?php _e( trim( $value1 ), 'woocommerce' );?></option>
+                    <?php
+                }
+            }else{
+                ?>
+                <option value="no_value"><?php _e( 'No Options for This Field at This Time!', 'user-registration-aide' ); ?></option>
+                <?php
+            }
+            ?>
+        </select>
+    </p>
+
+    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide radio-indent">
+        <label for="working"><?php _e( 'I`m currently working', 'foundationpress' ); ?></label>
+        <?php
+        $working = $field->get_total_field_options( 'working' );
+        if( !empty( $working ) ){
+            foreach( $working as $object ){
+                $value1 = $object->field_name;
+                ?>
+                <input <?php if($value1 == esc_attr( $user_meta['working'][0] )) echo 'checked';?> type="radio" name="working" class="csds_input" value="<?php echo trim( $value1 );?>" /><?php _e( ucfirst($value1), 'woocommerce' ); ?>
+                <?php
+            }
+        }else{
+            ?>
+            <?php _e( 'No Options for This Field at This Time!', 'user-registration-aide' ); ?>
+            <?php
+        }
+        ?>
+    </p>
+
+    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide radio-indent">
+        <label for="h_school"><?php _e( 'I`m a High School Graduate', 'foundationpress' ); ?></label>
+
+        <?php
+        $h_school = $field->get_total_field_options( 'h_school' );
+        if( !empty( $h_school ) ){
+            foreach( $h_school as $object ){
+                $value1 = $object->field_name;
+                ?>
+                <input <?php if($value1 == esc_attr( $user_meta['h_school'][0] )) echo 'checked';?> type="radio" name="h_school" class="csds_input" value="<?php echo trim( $value1 );?>" /><?php _e( ucfirst($value1), 'woocommerce' ); ?>
+                <?php
+            }
+        }else{
+            ?>
+            <?php _e( 'No Options for This Field at This Time!', 'user-registration-aide' ); ?>
+            <?php
+        }
+        ?>
+    </p>
+
     <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
         <label for="phone"><?php _e( 'Phone', 'woocommerce' ); ?></label>
         <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" id="phone" value="<?php echo esc_attr( $user_meta['phone'][0] ); ?>" />
@@ -63,31 +177,6 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
     <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
         <label for="mobile"><?php _e( 'Mobile', 'woocommerce' ); ?></label>
         <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="mobile" id="mobile" value="<?php echo esc_attr( $user_meta['mobile'][0] ); ?>" />
-    </p>
-
-    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-        <label for="marit_status"><?php _e( 'Marital Status', 'foundationpress' ); ?></label>
-        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="marit_status" id="marit_status" value="<?php echo esc_attr( $user_meta['marit_status'][0] ); ?>" />
-    </p>
-
-    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-        <label for="birth_country"><?php _e( 'Country of Birth', 'foundationpress' ); ?></label>
-        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="birth_country" id="birth_country" value="<?php echo esc_attr( $user_meta['birth_country'][0] ); ?>" />
-    </p>
-
-    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-        <label for="country_resid"><?php _e( 'Country of Residence', 'foundationpress' ); ?></label>
-        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="country_resid" id="country_resid" value="<?php echo esc_attr( $user_meta['country_resid'][0] ); ?>" />
-    </p>
-
-    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-        <label for="working"><?php _e( 'I`m currently working:', 'foundationpress' ); ?></label>
-        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="working" id="working" value="<?php echo esc_attr( $user_meta['working'][0] ); ?>" />
-    </p>
-
-    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-        <label for="h_school"><?php _e( 'I`m a High Shcool Graduate:', 'foundationpress' ); ?></label>
-        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="h_school" id="h_school" value="<?php echo esc_attr( $user_meta['h_school'][0] ); ?>" />
     </p>
     <!-- user meta data end -->
 

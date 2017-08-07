@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GreenCard\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 11:07+0000\n"
-"PO-Revision-Date: 2016-12-23 11:15+0000\n"
+"POT-Creation-Date: 2017-08-07 11:31+0000\n"
+"PO-Revision-Date: 2017-08-07 11:32+0000\n"
 "Last-Translator: admin <volodinks@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -14,347 +14,256 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: woocommerce.php:26 single.php:28 page.php:31
-#: page-templates/page-sidebar-left.php:22
-#: page-templates/page-full-width.php:22 page-templates/front.php:38
-msgid "Pages:"
-msgstr ""
-
-#: index.php:41 archive.php:41 search.php:38
-msgid "&larr; Older posts"
-msgstr ""
-
-#: index.php:42 archive.php:42 search.php:39
-msgid "Newer posts &rarr;"
-msgstr ""
-
-#: single.php:25 page.php:28
-msgid "Edit"
-msgstr ""
-
-#: search.php:16
-msgid "Search Results for"
-msgstr ""
-
-#: 404.php:16
+#: 404.php:8
 msgid "File Not Found"
 msgstr ""
 
-#: 404.php:20
+#: 404.php:12
 msgid ""
 "The page you are looking for might have been removed, had its name changed, "
 "or is temporarily unavailable."
 msgstr ""
 
-#: 404.php:22
+#: 404.php:14
 msgid "Please try the following:"
 msgstr ""
 
-#: 404.php:24
+#: 404.php:16
 msgid "Check your spelling"
 msgstr ""
 
-#: 404.php:25
+#: 404.php:17
 #, php-format
 msgid "Return to the <a href=\"%s\">home page</a>"
 msgstr ""
 
-#: 404.php:26
+#: 404.php:18
 msgid "Click the <a href=\"javascript:history.back()\">Back</a> button"
 msgstr ""
 
-#: comments.php:26
-msgid "Reply"
+#: archive.php:21 index.php:24 search.php:25
+msgid "&larr; Older posts"
 msgstr ""
 
-#: comments.php:35
+#: archive.php:22 index.php:25 search.php:26
+msgid "Newer posts &rarr;"
+msgstr ""
+
+#: comments.php:8
+#, php-format
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr ""
+
+#: comments.php:9
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: comments.php:10
+msgid "(Edit)"
+msgstr ""
+
+#: comments.php:16
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: comments.php:54
+#: comments.php:31
 msgid "Please do not load this page directly. Thanks!"
 msgstr ""
 
-#: comments.php:59
+#: comments.php:36
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: comments.php:72
+#: comments.php:46
+msgid "No Responses to"
+msgstr ""
+
+#: comments.php:46
+msgid "One Response to"
+msgstr ""
+
+#: comments.php:46
+msgid "% Responses to"
+msgstr ""
+
+#: comments.php:53
+msgid "&larr; Older comments"
+msgstr ""
+
+#: comments.php:54
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: comments.php:61
 msgid "Leave a Reply"
 msgstr ""
 
-#: comments.php:72
+#: comments.php:61
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: comments.php:75
+#: comments.php:64
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:79
+#: comments.php:68
 #, php-format
-msgid "Logged in as <a href=\"%1$s/wp-admin/profile.php\">%2$s</a>."
+msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
 msgstr ""
 
-#: comments.php:79
+#: comments.php:68
 msgid "Log out of this account"
 msgstr ""
 
-#: comments.php:79
+#: comments.php:68
 msgid "Log out &raquo;"
 msgstr ""
 
-#: comments.php:84
+#: comments.php:71
 msgid "Name"
 msgstr ""
 
-#: comments.php:84 comments.php:92
+#: comments.php:71 comments.php:75
 msgid " (required)"
 msgstr ""
 
-#: comments.php:92
+#: comments.php:75
 msgid "Email (will not be published)"
 msgstr ""
 
-#: comments.php:100
+#: comments.php:79
 msgid "Website"
 msgstr ""
 
-#: comments.php:109
+#: comments.php:84
 msgid "Comment"
 msgstr ""
 
-#: comments.php:116
+#: comments.php:87
 msgid "You can use these tags:"
 msgstr ""
 
-#: comments.php:122
+#: comments.php:88
 msgid "Submit Comment"
 msgstr ""
 
-#: searchform.php:13 searchform.php:16
-msgid "Search"
-msgstr ""
-
-#: template-parts/content-none.php:14
+#: content-none.php:11
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:20
+#: content-none.php:17
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:24
+#: content-none.php:21
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:29
+#: content-none.php:26
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: template-parts/content.php:19
+#: content.php:16
 msgid "Continue reading..."
 msgstr ""
 
-#. Name of the template
-msgid "GreenCard Front"
+#: hero.php:40 kitchen-sink.php:739 page-full.php:19 page-sidebar-left.php:21
+#: page.php:18 single.php:27 woocommerce.php:18
+msgid "Pages:"
 msgstr ""
 
-#. Name of the template
-msgid "Kitchen Sink"
+#: library/entry-meta.php:4
+#, php-format
+msgid "Posted on %1$s at %2$s."
 msgstr ""
 
-#. Name of the template
-msgid "Left Sidebar"
+#: library/entry-meta.php:5
+msgid "Written by"
 msgstr ""
 
-#. Name of the template
-msgid "Full Width"
-msgstr ""
-
-#. Name of the template
-msgid "Front"
-msgstr ""
-
-#: library/widget-areas.php:14
-msgid "Top right widgets"
-msgstr ""
-
-#: library/widget-areas.php:15
-msgid "Drag widgets to this Top Right container"
-msgstr ""
-
-#: library/widget-areas.php:24
-msgid "Sidebar widgets"
-msgstr ""
-
-#: library/widget-areas.php:25
-msgid "Drag widgets to this sidebar container."
-msgstr ""
-
-#: library/widget-areas.php:34
-msgid "Footer widgets"
-msgstr ""
-
-#: library/widget-areas.php:35
-msgid "Drag widgets to this footer container"
-msgstr ""
-
-#: library/custom-nav.php:16
-msgid "Mobile Menu Settings"
-msgstr ""
-
-#: library/custom-nav.php:17
-msgid "Controls the mobile menu"
-msgstr ""
-
-#: library/custom-nav.php:22
-msgid "Mobile navigation layout"
-msgstr ""
-
-#: library/custom-nav.php:31
-msgid "topbar"
-msgstr ""
-
-#: library/foundation.php:24
+#: library/foundation.php:16
 msgid "&laquo;"
 msgstr ""
 
-#: library/foundation.php:25
+#: library/foundation.php:17
 msgid "&raquo;"
 msgstr ""
 
-#: library/foundation.php:53
+#: library/foundation.php:40
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
 "design."
 msgstr ""
 
-#: library/foundation.php:54
+#: library/foundation.php:41
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr ""
 
-#: library/foundation.php:57
+#: library/foundation.php:44
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr ""
 
-#: library/foundation.php:107
-msgid "No Responses to"
+#: library/widget-areas.php:6
+msgid "Sidebar widgets"
 msgstr ""
 
-#: library/foundation.php:107
-msgid "One Response to"
+#: library/widget-areas.php:7
+msgid "Drag widgets to this sidebar container."
 msgstr ""
 
-#: library/foundation.php:107
-msgid "% Responses to"
+#: library/widget-areas.php:16
+msgid "Footer widgets"
 msgstr ""
 
-#: library/foundation.php:147
+#: library/widget-areas.php:17
+msgid "Drag widgets to this footer container"
+msgstr ""
+
+#: node_modules/grunt-pot/test/fixtures/some-file.php:3
+msgid "I'm a translatable string."
+msgstr ""
+
+#: node_modules/grunt-pot/test/fixtures/some-other-file.php:4
+msgid "Me too"
+msgstr ""
+
+#: node_modules/grunt-pot/test/fixtures/some-other-file.php:7
 #, php-format
-msgid "<cite class=\"fn\">%s</cite>"
+msgid "I have %d apple"
+msgid_plural "I have %d apples"
+msgstr[0] ""
+msgstr[1] ""
+
+#. TRANSLATORS: This should be translated as a shorthand for YEAR-MONTH-DAY using 4, 2 and 2 digits.
+#: node_modules/grunt-pot/test/fixtures/some-other-file.php:16
+msgid "yyyy-mm-dd"
 msgstr ""
 
-#: library/entry-meta.php:11
-#, php-format
-msgid "Posted on %1$s at %2$s."
+#: search.php:7
+msgid "Search Results for"
 msgstr ""
 
-#: library/entry-meta.php:12
-msgid "Written by"
+#: searchform.php:6 searchform.php:10
+msgid "Search"
 msgstr ""
 
-#: library/navigation.php:43
-msgid "mobile-nav"
-msgstr ""
+msgid "Married"
+msgstr "Женат/Замужем"
 
-#: library/navigation.php:210
-msgid "Page"
-msgstr ""
-
-#: woocommerce/myaccount/dashboard.php:60
-msgid "Email:"
-msgstr ""
-
-#: woocommerce/myaccount/dashboard.php:170
-msgid "Recent Orders"
-msgstr "Состояние платежей"
-
-#. Name of the theme
-msgid "GreenCard"
-msgstr ""
-
-#. Description of the theme
-msgid ""
-"FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb"
-msgstr ""
-
-#. Author of the theme
-msgid "Аноним"
-msgstr ""
-
-#. Name of the template
-msgid "GreenCard Login"
-msgstr "GreenCard Логин"
-
-#. Name of the template
-msgid "GreenCard Registration"
-msgstr "GreenCard  Регистрация"
-
-#. Name of the template
-msgid "GreenCard Page"
-msgstr "GreenCard Страница"
-
-#: woocommerce/myaccount/dashboard.php:64
-msgid "First Name:"
-msgstr "Имя:"
-
-#: woocommerce/myaccount/dashboard.php:68
-msgid "Last Name:"
-msgstr "Фамилия:"
-
-#: woocommerce/myaccount/dashboard.php:72
-msgid "Marital Status"
-msgstr "Семейное положение"
-
-#: woocommerce/myaccount/dashboard.php:76
-msgid "Country of Birth"
-msgstr "Страна рождения"
-
-#: woocommerce/myaccount/dashboard.php:80
-msgid "Country of Residence"
-msgstr "Страна проживания"
-
-#: woocommerce/myaccount/dashboard.php:84
-msgid "I`m currently working:"
-msgstr "Я сейчас работаю"
-
-#: woocommerce/myaccount/dashboard.php:88
-msgid "I`m a High Shcool Graduate:"
-msgstr "У меня есть высшее образование"
-
-#: woocommerce/myaccount/dashboard.php:92
-msgid "Mobile phone:"
-msgstr "Мобильный телефон"
-
-#: woocommerce/myaccount/dashboard.php:96
-msgid "Phone: (Home / Office):"
-msgstr "Телефон: (Домашний / Офис)"
-
-#: woocommerce/myaccount/dashboard.php:251
-msgid "You have choise subscrible to GREEN CARD LOTTERY"
-msgstr "Вы можете выбрать вид подписки GREEN CARD лотeреи"
+msgid "Unmarried"
+msgstr "Неженат/Незамужем"
 
 msgid "User info table"
 msgstr "Анкета пользователя"

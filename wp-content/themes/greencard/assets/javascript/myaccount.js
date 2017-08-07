@@ -297,9 +297,9 @@ var translate_arr =[
     {tag:'label', eng:'Phone: (Home / Office)*', rus:'Телефон*'},
     {tag:'label', eng:'Mobile phone*', rus:'Мобильный телефон*'},
     {tag:'label', eng:'Country', rus:'Страна'},
-    {tag:'div.radio-box', eng:'Unmarried', rus:'<input autocomplete="on" name="marit_status" class="csds_input marit_status" value="Неженат/Незамужем" checked type="radio">Неженат/Незамужем<input autocomplete="on" name="marit_status" class="csds_input marit_status" value="Женат/Замужем" type="radio">Женат/Замужем'},
-    {tag:'div.radio-box:has(.working)', eng:'yes', rus:'<input autocomplete="on" name="working" class="csds_input working" value="да" checked type="radio">да<input autocomplete="on" name="working" class="csds_input working" value="нет" type="radio">нет'},
-    {tag:'div.radio-box:has(.h_school)', eng:'yes', rus:'<input autocomplete="on" name="h_school" class="csds_input h_school" value="да" checked type="radio">да<input autocomplete="on" name="h_school" class="csds_input h_school" value="нет" type="radio">нет'}
+    {tag:'div.radio-box', eng:'Unmarried', rus:'<input autocomplete="on" name="marit_status" class="csds_input marit_status" value="Unmarried" checked type="radio">Неженат/Незамужем<input autocomplete="on" name="marit_status" class="csds_input marit_status" value="Married" type="radio">Женат/Замужем'},
+    {tag:'div.radio-box:has(.working)', eng:'yes', rus:'<input autocomplete="on" name="working" class="csds_input working" value="yes" checked type="radio">да<input autocomplete="on" name="working" class="csds_input working" value="no" type="radio">нет'},
+    {tag:'div.radio-box:has(.h_school)', eng:'yes', rus:'<input autocomplete="on" name="h_school" class="csds_input h_school" value="yes" checked type="radio">да<input autocomplete="on" name="h_school" class="csds_input h_school" value="no" type="radio">нет'}
 ];
 $.each(translate_arr, function(i,el){    
     $('#post-582 .woocommerce '+el.tag+':contains("'+el.eng+'")').html(el.rus);

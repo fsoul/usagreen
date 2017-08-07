@@ -57,6 +57,8 @@ body {overflow-x: hidden;}
 [type=file], [type=checkbox], [type=radio] {margin: 0 ;}
 .radio-box {margin: 0 ;font-size: 1.125rem;line-height: 2;}
 .radio-box input{margin-left:1.5em;margin-right:0.5em}
+.radio-indent input:last-child{margin-left:1.5em;}
+.radio-indent input{margin-right:0.5em;}
 .radio-box input:first-child{margin-left:0}
 #error-message {color: red;font-size: 1.3em;text-align: center;}
 
