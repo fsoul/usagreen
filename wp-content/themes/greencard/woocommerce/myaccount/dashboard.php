@@ -69,25 +69,25 @@ If ($current_user ){
 				<td class="info"><? echo get_user_meta( $current_user, 'last_name', true);?></td>
 			</tr>
 			<tr>
-				<td class="title"><? echo __('Marital Status', 'foundationpress' )?></td>
-				<td class="info"><? echo get_user_meta( $current_user, 'marit_status', true);?></td>
+				<td class="title"><? echo __('Marital Status', 'foundationpress' )?>:</td>
+				<td class="info"><? echo __(get_user_meta( $current_user, 'marit_status', true), 'foundationpress');?></td>
 			</tr>		
 			<tr>
-				<td class="title"><? echo __('Country of Birth', 'foundationpress' );?></td>
-				<td class="info"><? echo get_user_meta( $current_user, 'birth_country', true);?></td>
+				<td class="title"><? echo __('Country of Birth', 'foundationpress' );?>:</td>
+				<td class="info"><? echo __(get_user_meta( $current_user, 'birth_country', true), 'woocommerce');?></td>
 			</tr>		
 			<tr>
-				<td class="title"><? echo __('Country of Residence', 'foundationpress' );?></td>
-				<td class="info"><? echo get_user_meta( $current_user, 'country_resid', true);?></td>
+				<td class="title"><? echo __('Country of Residence', 'foundationpress' );?>:</td>
+				<td class="info"><? echo __(get_user_meta( $current_user, 'country_resid', true), 'woocommerce');?></td>
 			</tr>		
 			<tr>
 				<td class="title"><? echo __('I`m currently working:', 'foundationpress' );?></td>
-				<td class="info"><? echo get_user_meta( $current_user, 'working', true);?></td>
+				<td class="info"><? echo __(ucfirst(get_user_meta( $current_user, 'working', true)), 'woocommerce');?></td>
 			</tr>		
 			<tr>
-				<td class="title"><? echo __('I`m a High Shcool Graduate:', 'foundationpress' );?></td>
-				<td class="info"><? echo get_user_meta( $current_user, 'h_school', true);?></td>
-			</tr>		
+				<td class="title"><? echo __('I`m a High School Graduate:', 'foundationpress' );?></td>
+				<td class="info"><? echo __(ucfirst(get_user_meta( $current_user, 'h_school', true)), 'woocommerce');?></td>
+			</tr>
 			<tr>
 				<td class="title"><? echo __('Mobile phone:', 'foundationpress' );?></td>
 				<td class="info"><? echo get_user_meta( $current_user, 'mobile', true);?></td>
@@ -106,7 +106,7 @@ If ($current_user ){
 
 	</div>
 
-	<h2 class="title-style-2"><? echo __('Green card applications', 'foundationpress' );?></h2>
+	<!-- Green card applications #~#  <h2 class="title-style-2"><? echo __('Green card applications', 'foundationpress' );?></h2>
 
 	<div class="info-table-wrap large-9 medium-12">
 
@@ -139,7 +139,7 @@ If ($current_user ){
 			</tbody>				
 		</table>
 
-	</div>
+	</div>-->
 
 <?php
 
@@ -238,7 +238,7 @@ if ( $customer_orders ) { ?>
 			<?php endforeach; ?>
 <?php } else { ?>
 				<tr class="order">
-					<td colspan="5" class="title center info-line">No orders</td>
+					<td colspan="5" class="title center info-line"><?php echo __('No orders', 'foundationpress' )?></td>
 				</tr>
 				<tr class="order">
 					<td colspan="5" class="title center warning-line"><a href="/shop/"><?php echo __('You have choise subscrible to GREEN CARD LOTTERY', 'foundationpress' ); ?></a></td>
